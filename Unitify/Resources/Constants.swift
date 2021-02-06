@@ -1,0 +1,14 @@
+//
+//  Constants.swift
+//  Unitify
+//
+//  Created by Spemai-Macbook on 2021-02-06.
+//
+
+import Foundation
+
+struct Constant {
+    
+    static let UNITS_METHODS_TABLE_IDENTIFY  = "method"
+
+}
