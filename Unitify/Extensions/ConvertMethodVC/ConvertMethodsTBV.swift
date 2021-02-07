@@ -23,7 +23,7 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
         let data = methods[indexPath.row]
         
         cell.lblMethodName.text = data
-        cell.imgMethod.image    = UIImage(systemName: "\(data.first!.lowercased()).circle")
+        cell.imgMethod.image    = UIImage(named: "\(data)")
         cell.selectionStyle     = .none
         
         return cell
@@ -31,7 +31,12 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return tableView.frame.height / CGFloat(methods.count)
+        return tableView.frame.height / 6
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: Constant.WEIGHT_CONVERTER_SEGUE_IDENTIFY, sender: nil)
     }
     
 }
