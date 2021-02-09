@@ -9,11 +9,11 @@ import UIKit
 
 protocol UnitifyKeyboardViewDelegate {
     
-    func numberKeyPress(number: Int)
-    func decimalKeyPress()
-    func clearKeyPress()
-    func negativeKeyPress()
-
+    func numberKeyPress(number: Int) /// mark: when number button tap this will be fire
+    func decimalKeyPress() /// mark: when decimal button tap this will be fire
+    func clearKeyPress() /// mark: when clear button tap this will be fire
+    func negativeKeyPress() /// mark: when negative button tap this will be fire
+    func keyPress() /// mark: when any button tap this will be fire
 }
 
 class UnitifyKeyboardView: UIView {
@@ -49,18 +49,25 @@ class UnitifyKeyboardView: UIView {
     
     @IBAction func NumberBtnTap(_ sender: UIButton) {
         self.delegate?.numberKeyPress(number: Int(sender.tag))
+        self.delegate?.keyPress()
     }
     
     @IBAction func DecimalBtnTap(_ sender: Any) {
         self.delegate?.decimalKeyPress()
+        self.delegate?.keyPress()
+
     }
     
     @IBAction func clearBtnTap(_ sender: Any) {
         self.delegate?.clearKeyPress()
+        self.delegate?.keyPress()
+
     }
     
     @IBAction func negativeBtnTap(_ sender: Any) {
         self.delegate?.negativeKeyPress()
+        self.delegate?.keyPress()
+
 
     }
     

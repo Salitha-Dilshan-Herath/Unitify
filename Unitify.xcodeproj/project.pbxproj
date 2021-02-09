@@ -21,6 +21,7 @@
 		E5E243D425CE2F2D00B1FBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D225CE2F2D00B1FBF1 /* Main.storyboard */; };
 		E5E243D625CE2F3800B1FBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D525CE2F3800B1FBF1 /* Assets.xcassets */; };
 		E5E243D925CE2F3800B1FBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D725CE2F3800B1FBF1 /* LaunchScreen.storyboard */; };
+		E5FC65F125D2465100AC5D40 /* WeightVCKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E5E243D525CE2F3800B1FBF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E243D825CE2F3800B1FBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E243DA25CE2F3800B1FBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightVCKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +93,9 @@
 		E547D89D25CF03E30082CFD2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E5FC65EF25D2461800AC5D40 /* WeightConvertVC */,
+				E5FC65EE25D2460700AC5D40 /* Common */,
 				E547D8A125CF05710082CFD2 /* ConvertMethodVC */,
-				E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */,
-				E5BCF09225CFCEED007284C0 /* Common.swift */,
-				E5BCF0A725D07249007284C0 /* CustomTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +162,24 @@
 				E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E5FC65EE25D2460700AC5D40 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */,
+				E5BCF09225CFCEED007284C0 /* Common.swift */,
+				E5BCF0A725D07249007284C0 /* CustomTextField.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E5FC65EF25D2461800AC5D40 /* WeightConvertVC */ = {
+			isa = PBXGroup;
+			children = (
+				E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */,
+			);
+			path = WeightConvertVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +262,7 @@
 				E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */,
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
+				E5FC65F125D2465100AC5D40 /* WeightVCKeyboard.swift in Sources */,
 				E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

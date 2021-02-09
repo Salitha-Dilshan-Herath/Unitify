@@ -16,5 +16,7 @@ struct Constant {
     
     static let DECIMAL_CHARACTER = "."
     static let NEGATIVE_CHARACTER = "-"
+    
+    static var NUMBER_OF_DECIMAL_PLACES = 2
 
 }
