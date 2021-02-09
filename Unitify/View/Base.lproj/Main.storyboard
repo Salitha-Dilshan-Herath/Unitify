@@ -319,8 +319,9 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJw-9J-jzM">
                                                                 <rect key="frame" x="77" y="0.0" width="130" height="76.5"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter pound" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fBH-Yt-t3A" customClass="CustomTextField" customModule="Unitify" customModuleProvider="target">
+                                                                    <textField opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBH-Yt-t3A" customClass="CustomTextField" customModule="Unitify" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="12.5" width="122" height="51"/>
+                                                                        <color key="backgroundColor" white="0.82927447070000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -576,7 +577,7 @@
             <size key="intrinsicContentSize" width="122" height="34"/>
         </designable>
         <designable name="fBH-Yt-t3A">
-            <size key="intrinsicContentSize" width="123" height="34"/>
+            <size key="intrinsicContentSize" width="61.5" height="34"/>
         </designable>
         <designable name="hZf-Zc-36k">
             <size key="intrinsicContentSize" width="115" height="34"/>
