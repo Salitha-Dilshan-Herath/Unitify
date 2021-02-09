@@ -99,7 +99,9 @@
                             <constraint firstItem="lGb-gZ-JAx" firstAttribute="top" secondItem="Avy-vq-0Lw" secondAttribute="top" id="krX-Ll-oS5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Units" largeTitleDisplayMode="never" id="CKy-Gp-ORF"/>
+                    <navigationItem key="navigationItem" title="Units" largeTitleDisplayMode="never" id="CKy-Gp-ORF">
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="yDp-Qr-RLn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tblMethods" destination="lGb-gZ-JAx" id="mwA-2U-sbv"/>
                         <segue destination="Pwi-9o-i7W" kind="show" identifier="weight" id="xOW-9g-NOU"/>
@@ -109,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="-1517.3913043478262" y="699.77678571428567"/>
         </scene>
-        <!--Weight ConvertVC-->
+        <!--Weight-->
         <scene sceneID="S6t-DF-zRb">
             <objects>
                 <viewController id="Pwi-9o-i7W" customClass="WeightConvertVC" customModule="Unitify" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +124,60 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxK-TX-kXn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="381.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75P-NX-Dfk">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ounce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="18E-wQ-KSy">
+                                                        <rect key="frame" x="8" y="0.0" width="83" height="76.5"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-GL-jp6">
+                                                        <rect key="frame" x="91" y="0.0" width="323" height="76.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ounce" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NKr-be-xBt" customClass="CustomTextField" customModule="Unitify" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="12.5" width="315" height="51"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isKeyBoardShow" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Pwi-9o-i7W" id="uiE-iM-Rsg"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="NKr-be-xBt" firstAttribute="height" secondItem="7S6-GL-jp6" secondAttribute="height" multiplier="1:1.5" id="AIx-5w-cJd"/>
+                                                            <constraint firstItem="NKr-be-xBt" firstAttribute="centerY" secondItem="7S6-GL-jp6" secondAttribute="centerY" id="Spz-Bv-wrY"/>
+                                                            <constraint firstItem="NKr-be-xBt" firstAttribute="leading" secondItem="7S6-GL-jp6" secondAttribute="leading" id="a4K-V7-47l"/>
+                                                            <constraint firstAttribute="trailing" secondItem="NKr-be-xBt" secondAttribute="trailing" constant="8" id="cas-c5-9nO"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="18E-wQ-KSy" secondAttribute="bottom" id="1HI-GZ-NK0"/>
+                                                    <constraint firstItem="18E-wQ-KSy" firstAttribute="width" secondItem="75P-NX-Dfk" secondAttribute="width" multiplier="1:5" id="6AX-9z-0lz"/>
+                                                    <constraint firstItem="18E-wQ-KSy" firstAttribute="top" secondItem="75P-NX-Dfk" secondAttribute="top" id="F62-C1-MZs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7S6-GL-jp6" secondAttribute="bottom" id="HW6-Y9-L0F"/>
+                                                    <constraint firstItem="7S6-GL-jp6" firstAttribute="top" secondItem="75P-NX-Dfk" secondAttribute="top" id="I7O-4p-wfy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7S6-GL-jp6" secondAttribute="trailing" id="Yjl-QF-EUg"/>
+                                                    <constraint firstItem="18E-wQ-KSy" firstAttribute="leading" secondItem="75P-NX-Dfk" secondAttribute="leading" constant="8" id="Yvi-wF-LmH"/>
+                                                    <constraint firstItem="7S6-GL-jp6" firstAttribute="leading" secondItem="18E-wQ-KSy" secondAttribute="trailing" id="lbJ-pA-1KG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstItem="75P-NX-Dfk" firstAttribute="leading" secondItem="WxK-TX-kXn" secondAttribute="leading" id="8fc-7x-IjA"/>
+                                            <constraint firstItem="75P-NX-Dfk" firstAttribute="height" secondItem="WxK-TX-kXn" secondAttribute="height" multiplier="1:5" id="JlH-kZ-oA4"/>
+                                            <constraint firstItem="75P-NX-Dfk" firstAttribute="top" secondItem="WxK-TX-kXn" secondAttribute="top" id="YNe-4J-hct"/>
+                                            <constraint firstAttribute="trailing" secondItem="75P-NX-Dfk" secondAttribute="trailing" id="kq9-DO-iG4"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqW-3l-7VX" customClass="UnitifyKeyboardView" customModule="Unitify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="381.5" width="414" height="343.5"/>
@@ -151,7 +206,11 @@
                             <constraint firstItem="EcO-mf-MkZ" firstAttribute="trailing" secondItem="ibQ-Mw-5wL" secondAttribute="trailing" id="e0J-i5-IqP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VvV-gA-CPk"/>
+                    <navigationItem key="navigationItem" title="Weight" largeTitleDisplayMode="never" id="VvV-gA-CPk"/>
+                    <connections>
+                        <outlet property="txtOunce" destination="NKr-be-xBt" id="TU4-29-UCD"/>
+                        <outlet property="viwKeyboard" destination="yqW-3l-7VX" id="QOQ-mp-6dF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmy-nZ-Euh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,10 +300,15 @@
             <point key="canvasLocation" x="1171" y="-95"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="NKr-be-xBt">
+            <size key="intrinsicContentSize" width="120" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="atom" catalog="system" width="119" height="128"/>
         <image name="bolt.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="chevron.right" catalog="system" width="32" height="32"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

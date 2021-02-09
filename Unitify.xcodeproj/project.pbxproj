@@ -14,6 +14,8 @@
 		E5BCF08725CFC1F7007284C0 /* UniitifyKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */; };
 		E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */; };
 		E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */; };
+		E5BCF09325CFCEED007284C0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF09225CFCEED007284C0 /* Common.swift */; };
+		E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF0A725D07249007284C0 /* CustomTextField.swift */; };
 		E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */; };
 		E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */; };
 		E5E243D425CE2F2D00B1FBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D225CE2F2D00B1FBF1 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniitifyKeyboard.xib; sourceTree = "<group>"; };
 		E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitifyKeyboardView.swift; sourceTree = "<group>"; };
 		E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConvertVC.swift; sourceTree = "<group>"; };
+		E5BCF09225CFCEED007284C0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E5BCF0A725D07249007284C0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5E243C925CE2F2D00B1FBF1 /* Unitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 			children = (
 				E547D8A125CF05710082CFD2 /* ConvertMethodVC */,
 				E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */,
+				E5BCF09225CFCEED007284C0 /* Common.swift */,
+				E5BCF0A725D07249007284C0 /* CustomTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +238,8 @@
 				E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */,
 				E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */,
 				E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */,
+				E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */,
+				E5BCF09325CFCEED007284C0 /* Common.swift in Sources */,
 				E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */,
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
