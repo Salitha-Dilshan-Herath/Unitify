@@ -11,7 +11,7 @@ struct Constant {
     
     static let UNITS_METHODS_TABLE_IDENTIFY    = "method"
     static let WEIGHT_CONVERTER_SEGUE_IDENTIFY = "weight"
-
+    static let TEMPERATURE_CONVERTER_SEGUE_IDENTIFY = "temperature"
     static let KEYBOARD_NIB_NAME = "UniitifyKeyboard"
     
     static let DECIMAL_CHARACTER = "."
@@ -19,4 +19,5 @@ struct Constant {
     
     static var NUMBER_OF_DECIMAL_PLACES = 2
 
+    
 }

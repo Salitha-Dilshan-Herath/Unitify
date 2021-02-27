@@ -11,11 +11,15 @@
 		E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */; };
 		E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A225CF05950082CFD2 /* MethodTC.swift */; };
 		E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A625CF060E0082CFD2 /* Constants.swift */; };
+		E573E02425D8FC2200C58CF1 /* TemperatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */; };
+		E573E02825D8FD7600C58CF1 /* TemperatureVCKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */; };
 		E5BCF08725CFC1F7007284C0 /* UniitifyKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */; };
 		E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */; };
 		E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */; };
 		E5BCF09325CFCEED007284C0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF09225CFCEED007284C0 /* Common.swift */; };
 		E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF0A725D07249007284C0 /* CustomTextField.swift */; };
+		E5C5DFCC25E9DB4600430A61 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5DFCB25E9DB4600430A61 /* Temperature.swift */; };
+		E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5DFCE25E9E40C00430A61 /* Weight.swift */; };
 		E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */; };
 		E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */; };
 		E5E243D425CE2F2D00B1FBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D225CE2F2D00B1FBF1 /* Main.storyboard */; };
@@ -29,11 +33,15 @@
 		E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsTBV.swift; sourceTree = "<group>"; };
 		E547D8A225CF05950082CFD2 /* MethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTC.swift; sourceTree = "<group>"; };
 		E547D8A625CF060E0082CFD2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVC.swift; sourceTree = "<group>"; };
+		E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVCKeyboard.swift; sourceTree = "<group>"; };
 		E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniitifyKeyboard.xib; sourceTree = "<group>"; };
 		E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitifyKeyboardView.swift; sourceTree = "<group>"; };
 		E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConvertVC.swift; sourceTree = "<group>"; };
 		E5BCF09225CFCEED007284C0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E5BCF0A725D07249007284C0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E5C5DFCB25E9DB4600430A61 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		E5C5DFCE25E9E40C00430A61 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		E5E243C925CE2F2D00B1FBF1 /* Unitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,8 @@
 		E547D88F25CE2FF10082CFD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5C5DFCE25E9E40C00430A61 /* Weight.swift */,
+				E5C5DFCB25E9DB4600430A61 /* Temperature.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +103,7 @@
 		E547D89D25CF03E30082CFD2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E573E02625D8FD4C00C58CF1 /* TemperatureConvertVC */,
 				E5FC65EF25D2461800AC5D40 /* WeightConvertVC */,
 				E5FC65EE25D2460700AC5D40 /* Common */,
 				E547D8A125CF05710082CFD2 /* ConvertMethodVC */,
@@ -109,6 +120,14 @@
 			path = ConvertMethodVC;
 			sourceTree = "<group>";
 		};
+		E573E02625D8FD4C00C58CF1 /* TemperatureConvertVC */ = {
+			isa = PBXGroup;
+			children = (
+				E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */,
+			);
+			path = TemperatureConvertVC;
+			sourceTree = "<group>";
+		};
 		E5BCF07E25CFC113007284C0 /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */,
+				E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */,
 			);
 			path = ConverterMethodsVCs;
 			sourceTree = "<group>";
@@ -253,9 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E573E02825D8FD7600C58CF1 /* TemperatureVCKeyboard.swift in Sources */,
 				E547D89B25CEF8D10082CFD2 /* ConvertMethodsVC.swift in Sources */,
 				E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */,
+				E573E02425D8FC2200C58CF1 /* TemperatureVC.swift in Sources */,
 				E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */,
+				E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */,
 				E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */,
 				E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */,
 				E5BCF09325CFCEED007284C0 /* Common.swift in Sources */,
@@ -263,6 +286,7 @@
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
 				E5FC65F125D2465100AC5D40 /* WeightVCKeyboard.swift in Sources */,
+				E5C5DFCC25E9DB4600430A61 /* Temperature.swift in Sources */,
 				E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

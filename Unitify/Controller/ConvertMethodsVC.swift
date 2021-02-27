@@ -13,8 +13,8 @@ class ConvertMethodsVC: UIViewController {
     @IBOutlet weak var tblMethods: UITableView!
     
     //MARK: - Variables
-    let methods: [String] = ["Weight", "Temperature","Area", "Volume", "Length", "Speed"]
-    
+    let methods: [ConvertTypes] = [.weight, .temperature,.volume, .volumeliquid, .length, .speed]
+    var selectedConvertType = ConvertTypes.weight
     
     //MARK: - Life Cycle methods
     override func viewDidLoad() {
@@ -37,6 +37,13 @@ class ConvertMethodsVC: UIViewController {
             self.tblMethods.reloadWithAnimation()
         }
     }
-    
-    
+}
+
+enum ConvertTypes: String {
+    case weight = "Weight"
+    case temperature = "Temperature"
+    case length = "Length"
+    case speed  = "Speed"
+    case volume = "Volume"
+    case volumeliquid = "Volume Liquid"
 }

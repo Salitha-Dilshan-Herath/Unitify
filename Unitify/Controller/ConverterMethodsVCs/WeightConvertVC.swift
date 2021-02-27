@@ -11,7 +11,7 @@ class WeightConvertVC: UIViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
-    @IBOutlet weak var txtOunce: UITextField!
+    @IBOutlet weak var txtOunce: CustomTextField!
     @IBOutlet weak var txtPound: CustomTextField!
     @IBOutlet weak var txtGram: CustomTextField!
     @IBOutlet weak var txtStone: CustomTextField!
@@ -20,6 +20,7 @@ class WeightConvertVC: UIViewController {
     
     //MARK: - Variables
     var selectedTextField: UITextField?
+    var weight = Weight()
     
     var ounceValue: Double = 0.0 {
         didSet {
@@ -77,6 +78,7 @@ class WeightConvertVC: UIViewController {
     
     private func setupTextFields () {
         txtOunce.text = ""
+        
     }
     
     func updateCalculation() {
@@ -88,76 +90,63 @@ class WeightConvertVC: UIViewController {
         switch textField.tag {
         
         case 1:
+                        
+            weight.convertOunce(ounce: value)
             
-            let ounce = Measurement(value: value, unit: UnitMass.ounces)
-            
-            self.poundValue = ounce.converted(to: .pounds).value
-            self.gramValue  = ounce.converted(to: .grams).value
-            self.stoneValue = ounce.converted(to: .stones).value
-            self.kgValue    = ounce.converted(to: .kilograms).value
-            
-            let remainingStone = Measurement(value: (stoneValue - Double(Int(stoneValue))), unit: UnitMass.stones)
-            self.stonePValue   =  remainingStone.converted(to: .pounds).value
+            self.poundValue  = weight.pound
+            self.gramValue   = weight.gram
+            self.stoneValue  = weight.stone
+            self.kgValue     = weight.kg
+            self.stonePValue =  weight.stoneP
 
             break
         
         case 2:
+                        
+            weight.convertPound(pound: value)
             
-            let pound = Measurement(value: value, unit: UnitMass.pounds)
-            
-            self.ounceValue = pound.converted(to: .ounces).value
-            self.gramValue  = pound.converted(to: .grams).value
-            self.stoneValue = pound.converted(to: .stones).value
-            self.kgValue    = pound.converted(to: .kilograms).value
-
-            let remainingStone = Measurement(value: (stoneValue - Double(Int(stoneValue))), unit: UnitMass.stones)
-            self.stonePValue   =  remainingStone.converted(to: .pounds).value
+            self.ounceValue  = weight.ounce
+            self.gramValue   = weight.gram
+            self.stoneValue  = weight.stone
+            self.kgValue     = weight.kg
+            self.stonePValue =  weight.stoneP
             
             break
             
         case 3:
             
-            let gram = Measurement(value: value, unit: UnitMass.grams)
+            weight.convertGram(gram: value)
             
-            self.ounceValue = gram.converted(to: .ounces).value
-            self.poundValue = gram.converted(to: .pounds).value
-            self.stoneValue = gram.converted(to: .stones).value
-            self.kgValue    = gram.converted(to: .kilograms).value
-            
-            let remainingStone = Measurement(value: (stoneValue - Double(Int(stoneValue))), unit: UnitMass.stones)
-            self.stonePValue   =  remainingStone.converted(to: .pounds).value
+            self.ounceValue  = weight.ounce
+            self.poundValue  = weight.pound
+            self.stoneValue  = weight.stone
+            self.kgValue     = weight.kg
+            self.stonePValue =  weight.stoneP
 
             break
             
         case 4:
             
-            let stone = Measurement(value: value, unit: UnitMass.stones)
+            weight.convertStone(stone: value)
             
-            self.ounceValue = stone.converted(to: .ounces).value
-            self.poundValue = stone.converted(to: .pounds).value
-            self.gramValue  = stone.converted(to: .grams).value
-            self.kgValue    = stone.converted(to: .kilograms).value
-            self.stonePValue = 0
-            
-            break
-            
-        case 5:
-            
-        
+            self.ounceValue  = weight.ounce
+            self.poundValue  = weight.pound
+            self.gramValue   = weight.gram
+            self.kgValue     = weight.kg
+            self.stonePValue = weight.stoneP
             
             break
+            
             
         case 6:
+                        
+            weight.convertKg(kg: value)
             
-            let kg = Measurement(value: value, unit: UnitMass.kilograms)
-            
-            self.ounceValue = kg.converted(to: .ounces).value
-            self.poundValue = kg.converted(to: .pounds).value
-            self.stoneValue = kg.converted(to: .stones).value
-            self.gramValue  = kg.converted(to: .grams).value
-            
-            let remainingStone = Measurement(value: (stoneValue - Double(Int(stoneValue))), unit: UnitMass.stones)
-            self.stonePValue   =  remainingStone.converted(to: .pounds).value
+            self.ounceValue  = weight.ounce
+            self.poundValue  = weight.pound
+            self.stoneValue  = weight.stone
+            self.gramValue   = weight.gram
+            self.stonePValue =  weight.stoneP
 
             break
             
@@ -174,5 +163,14 @@ extension WeightConvertVC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedTextField = textField
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) {
+            return true
+        }
+        
+        return  false
     }
 }

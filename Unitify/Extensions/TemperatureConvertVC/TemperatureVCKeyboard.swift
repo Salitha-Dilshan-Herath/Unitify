@@ -1,14 +1,14 @@
 //
-//  WeightVCKeyboard.swift
+//  TemperatureVCKeyboard.swift
 //  Unitify
 //
-//  Created by Spemai-Macbook on 2021-02-09.
+//  Created by Spemai-Macbook on 2021-02-14.
 //
 
 import Foundation
 
 ///Unitify keyboard delegate implement
-extension WeightConvertVC: UnitifyKeyboardViewDelegate {
+extension TemperatureVC: UnitifyKeyboardViewDelegate {
     
     func keyPress() {
         
@@ -53,12 +53,12 @@ extension WeightConvertVC: UnitifyKeyboardViewDelegate {
     
     func negativeKeyPress() {
         
-        //guard let textField = self.selectedTextField else { return }
+        guard let textField = self.selectedTextField else { return }
         
-//        let txt = textField.text!
-//
-//        if !txt.contains(Constant.NEGATIVE_CHARACTER) {
-//            textField.text!.insert(contentsOf: Constant.NEGATIVE_CHARACTER, at: txt.startIndex)
-//        }
+        let txt = textField.text!
+
+        if !txt.contains(Constant.NEGATIVE_CHARACTER) {
+            textField.text!.insert(contentsOf: Constant.NEGATIVE_CHARACTER, at: txt.startIndex)
+        }
     }
 }

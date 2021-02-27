@@ -22,8 +22,8 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
         
         let data = methods[indexPath.row]
         
-        cell.lblMethodName.text = data
-        cell.imgMethod.image    = UIImage(named: "\(data)")
+        cell.lblMethodName.text = data.rawValue
+        cell.imgMethod.image    = UIImage(named: "\(data.rawValue)")
         cell.selectionStyle     = .none
         
         return cell
@@ -36,7 +36,29 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.performSegue(withIdentifier: Constant.WEIGHT_CONVERTER_SEGUE_IDENTIFY, sender: nil)
+        let data = methods[indexPath.row]
+
+        self.selectedConvertType = data
+
+        switch self.selectedConvertType {
+      
+        case .weight:
+            
+            self.performSegue(withIdentifier: Constant.WEIGHT_CONVERTER_SEGUE_IDENTIFY, sender: nil)
+
+        case .temperature:
+            
+            self.performSegue(withIdentifier: Constant.TEMPERATURE_CONVERTER_SEGUE_IDENTIFY, sender: nil)
+
+        case .length:
+            break
+        case .speed:
+            break
+        case .volume:
+            break
+        case .volumeliquid:
+            break
+        }
     }
     
 }
