@@ -20,43 +20,43 @@ class WeightConvertVC: UIViewController {
     
     //MARK: - Variables
     var selectedTextField: UITextField?
-    var weight = Weight()
+    var weight: Weight = Weight()
     
     var ounceValue: Double = 0.0 {
         didSet {
-            txtOunce.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f oz", ounceValue)
+            txtOunce.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", ounceValue)
         }
     }
     
     var poundValue: Double = 0.0 {
         didSet {
-            txtPound.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f lb", poundValue)
+            txtPound.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", poundValue)
         }
     }
     
     var gramValue: Double = 0.0 {
         didSet {
-            txtGram.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f g", gramValue)
+            txtGram.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", gramValue)
         }
     }
     
     var stoneValue: Double = 0.0 {
         didSet {
             
-            txtStone.text = "\(Int(stoneValue)) st"
+            txtStone.text = "\(Int(stoneValue))"
         }
     }
     
     var stonePValue: Double = 0.0 {
         didSet {
             
-            txtSpound.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f lb", stonePValue)
+            txtSpound.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", stonePValue)
         }
     }
     
     var kgValue: Double = 0.0 {
         didSet {
-            txtKg.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f kg", kgValue)
+            txtKg.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", kgValue)
         }
     }
     
@@ -72,7 +72,6 @@ class WeightConvertVC: UIViewController {
     ///setup ui
     private func setupUI() {
         viwKeyboard.delegate = self
-        
         setupTextFields()
     }
     

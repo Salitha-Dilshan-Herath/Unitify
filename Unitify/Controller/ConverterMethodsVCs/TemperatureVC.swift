@@ -17,23 +17,23 @@ class TemperatureVC: UIViewController {
 
     //MARK: - Variables
     var selectedTextField: UITextField?
-    var temperature = Temperature()
+    var temperature: Temperature = Temperature()
     
     var celsiusValue: Double = 0.0 {
         didSet {
-            txtCelsius.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f °C", celsiusValue)
+            txtCelsius.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", celsiusValue)
         }
     }
     
     var fahrenheitValue: Double = 0.0 {
         didSet {
-            txtFahrenheit.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f °F", fahrenheitValue)
+            txtFahrenheit.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", fahrenheitValue)
         }
     }
     
     var kelvinValue: Double = 0.0 {
         didSet {
-            txtKelvin.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f °K", kelvinValue)
+            txtKelvin.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", kelvinValue)
         }
     }
     

@@ -25,6 +25,7 @@
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vy-re-LRw">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="1"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="F3s-Jd-sVJ"/>
@@ -32,6 +33,7 @@
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uex-yX-fum">
                                     <rect key="frame" x="138" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="2"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="rtL-Iz-Yp1"/>
@@ -39,6 +41,7 @@
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLa-7x-Krb">
                                     <rect key="frame" x="276" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="3"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="jHm-h6-aBQ"/>
@@ -51,6 +54,7 @@
                             <subviews>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnv-FK-gXP">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="4"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="c0Y-56-G9E"/>
@@ -58,6 +62,7 @@
                                 </button>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-UD-Aco">
                                     <rect key="frame" x="138" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="5"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="ak2-b6-u80"/>
@@ -65,6 +70,7 @@
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj5-Fw-d7a">
                                     <rect key="frame" x="276" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="6"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="WfT-F0-4Ex"/>
@@ -77,6 +83,7 @@
                             <subviews>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5A-bm-ZuR">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="7"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="EhS-ce-ZZ1"/>
@@ -84,6 +91,7 @@
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-zX-E8j">
                                     <rect key="frame" x="138" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="8"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="9hN-7h-vOH"/>
@@ -91,6 +99,7 @@
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRc-x9-DBD">
                                     <rect key="frame" x="276" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="9"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="Pzc-sP-aXW"/>
@@ -103,6 +112,7 @@
                             <subviews>
                                 <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKI-2l-LjQ">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="."/>
                                     <connections>
                                         <action selector="DecimalBtnTap:" destination="-1" eventType="touchUpInside" id="cZ0-l1-DPj"/>
@@ -110,6 +120,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z14-1y-2gk">
                                     <rect key="frame" x="138" y="0.0" width="138" height="86"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="0"/>
                                     <connections>
                                         <action selector="NumberBtnTap:" destination="-1" eventType="touchUpInside" id="42c-6j-lxj"/>
@@ -123,6 +134,7 @@
                                             <subviews>
                                                 <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfJ-gu-xY5">
                                                     <rect key="frame" x="0.0" y="0.0" width="138" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="x"/>
                                                     <connections>
                                                         <action selector="clearBtnTap:" destination="-1" eventType="touchUpInside" id="KXI-ch-8zb"/>
@@ -130,6 +142,7 @@
                                                 </button>
                                                 <button opaque="NO" tag="-3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-mn-gaF">
                                                     <rect key="frame" x="0.0" y="43" width="138" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="NEG"/>
                                                     <connections>
                                                         <action selector="negativeBtnTap:" destination="-1" eventType="touchUpInside" id="bxy-yt-PHn"/>

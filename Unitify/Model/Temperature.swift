@@ -9,9 +9,9 @@ import Foundation
 
 class Temperature: Codable {
     
-    var celsius: Double = 0
-    var fahrenheit: Double = 0
-    var kelvin: Double = 0
+    var celsius: Double 
+    var fahrenheit: Double
+    var kelvin: Double
 
     init(celsius: Double = 0, fahrenheit: Double = 0, kelvin: Double = 0) {
         self.celsius = celsius
