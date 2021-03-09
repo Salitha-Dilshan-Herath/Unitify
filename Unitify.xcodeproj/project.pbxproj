@@ -12,23 +12,25 @@
 		E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A225CF05950082CFD2 /* MethodTC.swift */; };
 		E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A625CF060E0082CFD2 /* Constants.swift */; };
 		E573E02425D8FC2200C58CF1 /* TemperatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */; };
-		E573E02825D8FD7600C58CF1 /* TemperatureVCKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */; };
 		E5BCF08725CFC1F7007284C0 /* UniitifyKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */; };
 		E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */; };
 		E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */; };
-		E5BCF09325CFCEED007284C0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF09225CFCEED007284C0 /* Common.swift */; };
+		E5BCF09325CFCEED007284C0 /* CommonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF09225CFCEED007284C0 /* CommonExtentions.swift */; };
 		E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BCF0A725D07249007284C0 /* CustomTextField.swift */; };
 		E5C5DFCC25E9DB4600430A61 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5DFCB25E9DB4600430A61 /* Temperature.swift */; };
 		E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5DFCE25E9E40C00430A61 /* Weight.swift */; };
 		E5C5DFD625ED59FA00430A61 /* VolumeLiquidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5DFD525ED59FA00430A61 /* VolumeLiquidVC.swift */; };
-		E5DE409D25F14F3E00655F5F /* VolumeLiquidVCKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE409C25F14F3E00655F5F /* VolumeLiquidVCKeyboard.swift */; };
+		E5DE40E325F3354900655F5F /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE40E225F3354900655F5F /* SpeedVC.swift */; };
+		E5DE40E625F3372300655F5F /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE40E525F3372300655F5F /* Speed.swift */; };
+		E5DE40EF25F3D31C00655F5F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE40EE25F3D31C00655F5F /* BaseViewController.swift */; };
+		E5DE40F625F3F5DD00655F5F /* LengthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE40F525F3F5DD00655F5F /* LengthVC.swift */; };
+		E5DE40F925F3F8BD00655F5F /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE40F825F3F8BD00655F5F /* Length.swift */; };
 		E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */; };
 		E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */; };
 		E5E243D425CE2F2D00B1FBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D225CE2F2D00B1FBF1 /* Main.storyboard */; };
 		E5E243D625CE2F3800B1FBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D525CE2F3800B1FBF1 /* Assets.xcassets */; };
 		E5E243D925CE2F3800B1FBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D725CE2F3800B1FBF1 /* LaunchScreen.storyboard */; };
 		E5F1CA8B25F0A3C600E45E54 /* Liquid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1CA8A25F0A3C600E45E54 /* Liquid.swift */; };
-		E5FC65F125D2465100AC5D40 /* WeightVCKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,16 +39,19 @@
 		E547D8A225CF05950082CFD2 /* MethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTC.swift; sourceTree = "<group>"; };
 		E547D8A625CF060E0082CFD2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVC.swift; sourceTree = "<group>"; };
-		E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVCKeyboard.swift; sourceTree = "<group>"; };
 		E5BCF08625CFC1F7007284C0 /* UniitifyKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniitifyKeyboard.xib; sourceTree = "<group>"; };
 		E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitifyKeyboardView.swift; sourceTree = "<group>"; };
 		E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConvertVC.swift; sourceTree = "<group>"; };
-		E5BCF09225CFCEED007284C0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E5BCF09225CFCEED007284C0 /* CommonExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtentions.swift; sourceTree = "<group>"; };
 		E5BCF0A725D07249007284C0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5C5DFCB25E9DB4600430A61 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		E5C5DFCE25E9E40C00430A61 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		E5C5DFD525ED59FA00430A61 /* VolumeLiquidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeLiquidVC.swift; sourceTree = "<group>"; };
-		E5DE409C25F14F3E00655F5F /* VolumeLiquidVCKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeLiquidVCKeyboard.swift; sourceTree = "<group>"; };
+		E5DE40E225F3354900655F5F /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
+		E5DE40E525F3372300655F5F /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		E5DE40EE25F3D31C00655F5F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E5DE40F525F3F5DD00655F5F /* LengthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthVC.swift; sourceTree = "<group>"; };
+		E5DE40F825F3F8BD00655F5F /* Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		E5E243C925CE2F2D00B1FBF1 /* Unitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E243CC25CE2F2D00B1FBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E243CE25CE2F2D00B1FBF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +60,6 @@
 		E5E243D825CE2F3800B1FBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E243DA25CE2F3800B1FBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5F1CA8A25F0A3C600E45E54 /* Liquid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
-		E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightVCKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				E5C5DFCE25E9E40C00430A61 /* Weight.swift */,
 				E5C5DFCB25E9DB4600430A61 /* Temperature.swift */,
 				E5F1CA8A25F0A3C600E45E54 /* Liquid.swift */,
+				E5DE40E525F3372300655F5F /* Speed.swift */,
+				E5DE40F825F3F8BD00655F5F /* Length.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,9 +116,6 @@
 		E547D89D25CF03E30082CFD2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E5DE409B25F14ED500655F5F /* VolumeLiquidConvertVC */,
-				E573E02625D8FD4C00C58CF1 /* TemperatureConvertVC */,
-				E5FC65EF25D2461800AC5D40 /* WeightConvertVC */,
 				E5FC65EE25D2460700AC5D40 /* Common */,
 				E547D8A125CF05710082CFD2 /* ConvertMethodVC */,
 			);
@@ -126,14 +129,6 @@
 				E547D8A225CF05950082CFD2 /* MethodTC.swift */,
 			);
 			path = ConvertMethodVC;
-			sourceTree = "<group>";
-		};
-		E573E02625D8FD4C00C58CF1 /* TemperatureConvertVC */ = {
-			isa = PBXGroup;
-			children = (
-				E573E02725D8FD7600C58CF1 /* TemperatureVCKeyboard.swift */,
-			);
-			path = TemperatureConvertVC;
 			sourceTree = "<group>";
 		};
 		E5BCF07E25CFC113007284C0 /* Custom View */ = {
@@ -150,16 +145,10 @@
 				E5BCF08D25CFC4E7007284C0 /* WeightConvertVC.swift */,
 				E573E02325D8FC2200C58CF1 /* TemperatureVC.swift */,
 				E5C5DFD525ED59FA00430A61 /* VolumeLiquidVC.swift */,
+				E5DE40E225F3354900655F5F /* SpeedVC.swift */,
+				E5DE40F525F3F5DD00655F5F /* LengthVC.swift */,
 			);
 			path = ConverterMethodsVCs;
-			sourceTree = "<group>";
-		};
-		E5DE409B25F14ED500655F5F /* VolumeLiquidConvertVC */ = {
-			isa = PBXGroup;
-			children = (
-				E5DE409C25F14F3E00655F5F /* VolumeLiquidVCKeyboard.swift */,
-			);
-			path = VolumeLiquidConvertVC;
 			sourceTree = "<group>";
 		};
 		E5E243C025CE2F2D00B1FBF1 = {
@@ -205,18 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				E5BCF08925CFC237007284C0 /* UnitifyKeyboardView.swift */,
-				E5BCF09225CFCEED007284C0 /* Common.swift */,
+				E5BCF09225CFCEED007284C0 /* CommonExtentions.swift */,
 				E5BCF0A725D07249007284C0 /* CustomTextField.swift */,
+				E5DE40EE25F3D31C00655F5F /* BaseViewController.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		E5FC65EF25D2461800AC5D40 /* WeightConvertVC */ = {
-			isa = PBXGroup;
-			children = (
-				E5FC65F025D2465100AC5D40 /* WeightVCKeyboard.swift */,
-			);
-			path = WeightConvertVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E573E02825D8FD7600C58CF1 /* TemperatureVCKeyboard.swift in Sources */,
 				E547D89B25CEF8D10082CFD2 /* ConvertMethodsVC.swift in Sources */,
+				E5DE40F625F3F5DD00655F5F /* LengthVC.swift in Sources */,
 				E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */,
-				E5DE409D25F14F3E00655F5F /* VolumeLiquidVCKeyboard.swift in Sources */,
+				E5DE40E625F3372300655F5F /* Speed.swift in Sources */,
 				E573E02425D8FC2200C58CF1 /* TemperatureVC.swift in Sources */,
 				E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */,
 				E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */,
@@ -301,11 +283,13 @@
 				E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */,
 				E5F1CA8B25F0A3C600E45E54 /* Liquid.swift in Sources */,
 				E5C5DFD625ED59FA00430A61 /* VolumeLiquidVC.swift in Sources */,
-				E5BCF09325CFCEED007284C0 /* Common.swift in Sources */,
+				E5DE40E325F3354900655F5F /* SpeedVC.swift in Sources */,
+				E5DE40EF25F3D31C00655F5F /* BaseViewController.swift in Sources */,
+				E5BCF09325CFCEED007284C0 /* CommonExtentions.swift in Sources */,
 				E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */,
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
-				E5FC65F125D2465100AC5D40 /* WeightVCKeyboard.swift in Sources */,
+				E5DE40F925F3F8BD00655F5F /* Length.swift in Sources */,
 				E5C5DFCC25E9DB4600430A61 /* Temperature.swift in Sources */,
 				E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */,
 			);

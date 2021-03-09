@@ -13,6 +13,8 @@ struct Constant {
     static let WEIGHT_CONVERTER_SEGUE_IDENTIFY      = "weight"
     static let TEMPERATURE_CONVERTER_SEGUE_IDENTIFY = "temperature"
     static let LIQUID_CONVERTER_SEGUE_IDENTIFY      = "liquid"
+    static let SPEED_CONVERTER_SEGUE_IDENTIFY       = "speed"
+    static let LENGTH_CONVERTER_SEGUE_IDENTIFY      = "length"
 
     static let KEYBOARD_NIB_NAME = "UniitifyKeyboard"
     

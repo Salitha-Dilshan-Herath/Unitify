@@ -1,19 +1,23 @@
 //
-//  VolumeLiquidVCKeyboard.swift
+//  BaseViewController.swift
 //  Unitify
 //
-//  Created by Spemai-Macbook on 2021-03-04.
+//  Created by Spemai-Macbook on 2021-03-06.
 //
 
 import Foundation
+import UIKit
 
-
-///Unitify keyboard delegate implement
-extension VolumeLiquidVC: UnitifyKeyboardViewDelegate {
+class BaseViewController: UIViewController, UnitifyKeyboardViewDelegate {
+    
+    var selectedTextField: UITextField?
     
     func keyPress() {
         
-        updateCalculation()
+    }
+    
+    func negativeKeyPress() {
+        
     }
     
     func numberKeyPress(number: Int) {
@@ -52,14 +56,40 @@ extension VolumeLiquidVC: UnitifyKeyboardViewDelegate {
         }
     }
     
-    func negativeKeyPress() {
+    func textFieldTap()  {
         
-        guard let textField = self.selectedTextField else { return }
+    }
+    
+    func keyBoardDoneKeyPress() {
         
-        let txt = textField.text!
+    }
+ 
+}
 
-        if !txt.contains(Constant.NEGATIVE_CHARACTER) {
-            textField.text!.insert(contentsOf: Constant.NEGATIVE_CHARACTER, at: txt.startIndex)
+///Text Field delegate implement
+extension BaseViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        selectedTextField = textField
+        textFieldTap()
+
+        
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) {
+            return true
         }
+        
+        return  false
     }
 }

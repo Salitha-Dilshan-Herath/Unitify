@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeightConvertVC: UIViewController {
+class WeightConvertVC: BaseViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
@@ -17,9 +17,11 @@ class WeightConvertVC: UIViewController {
     @IBOutlet weak var txtStone: CustomTextField!
     @IBOutlet weak var txtSpound: CustomTextField!
     @IBOutlet weak var txtKg: CustomTextField!
+    @IBOutlet weak var viwScrolle: UIScrollView!
+    @IBOutlet weak var constraintTxtFieldViw: NSLayoutConstraint!
+    @IBOutlet weak var constraintKeyBoardBottom: NSLayoutConstraint!
     
     //MARK: - Variables
-    var selectedTextField: UITextField?
     var weight: Weight = Weight()
     
     var ounceValue: Double = 0.0 {
@@ -60,6 +62,37 @@ class WeightConvertVC: UIViewController {
         }
     }
     
+    var isKeyBoardShow: Bool = false {
+        
+        didSet {
+            
+            if isKeyBoardShow {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+                                
+                let extraValue = constraintTxtFieldViw.constant - ( self.view.frame.height / 2 )
+                
+                if extraValue > 0 {
+                    self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + extraValue)
+                }
+                
+            } else {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = -1000
+                    self.view.layoutIfNeeded()
+                })
+                
+                self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+
+                
+            }
+        }
+    }
+    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +105,10 @@ class WeightConvertVC: UIViewController {
     ///setup ui
     private func setupUI() {
         viwKeyboard.delegate = self
+        isKeyBoardShow = false
         setupTextFields()
+        //self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: 1000)
+        
     }
     
     private func setupTextFields () {
@@ -89,7 +125,7 @@ class WeightConvertVC: UIViewController {
         switch textField.tag {
         
         case 1:
-                        
+            
             weight.convertOunce(ounce: value)
             
             self.poundValue  = weight.pound
@@ -97,11 +133,11 @@ class WeightConvertVC: UIViewController {
             self.stoneValue  = weight.stone
             self.kgValue     = weight.kg
             self.stonePValue =  weight.stoneP
-
+            
             break
-        
+            
         case 2:
-                        
+            
             weight.convertPound(pound: value)
             
             self.ounceValue  = weight.ounce
@@ -121,7 +157,7 @@ class WeightConvertVC: UIViewController {
             self.stoneValue  = weight.stone
             self.kgValue     = weight.kg
             self.stonePValue =  weight.stoneP
-
+            
             break
             
         case 4:
@@ -138,7 +174,7 @@ class WeightConvertVC: UIViewController {
             
             
         case 6:
-                        
+            
             weight.convertKg(kg: value)
             
             self.ounceValue  = weight.ounce
@@ -146,7 +182,7 @@ class WeightConvertVC: UIViewController {
             self.stoneValue  = weight.stone
             self.gramValue   = weight.gram
             self.stonePValue =  weight.stoneP
-
+            
             break
             
         default:
@@ -154,22 +190,22 @@ class WeightConvertVC: UIViewController {
             
         }
     }
-}
-
-
-///Text Field delegate implement
-extension WeightConvertVC: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        selectedTextField = textField
+    /// keyboard key press event
+    override func keyPress() {
+        
+        updateCalculation()
+        
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    override func textFieldTap() {
         
-        if (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) {
-            return true
+        if !isKeyBoardShow {
+            isKeyBoardShow.toggle()
         }
-        
-        return  false
+    }
+    
+    override func keyBoardDoneKeyPress() {
+        isKeyBoardShow.toggle()
     }
 }

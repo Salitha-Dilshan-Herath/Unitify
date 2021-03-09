@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VolumeLiquidVC: UIViewController {
+class VolumeLiquidVC: BaseViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
@@ -18,7 +18,6 @@ class VolumeLiquidVC: UIViewController {
     @IBOutlet weak var txtMillilitre: CustomTextField!
     
     //MARK: - Variables
-    var selectedTextField: UITextField?
     var liquid: Liquid = Liquid()
     
     var gallonValue: Double = 0.0 {
@@ -132,21 +131,11 @@ class VolumeLiquidVC: UIViewController {
             
         }
     }
+    
+    /// keyboard key press event
+    override func keyPress() {
+        updateCalculation()
+    }
+    
 }
 
-///Text Field delegate implement
-extension VolumeLiquidVC: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        selectedTextField = textField
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) {
-            return true
-        }
-        
-        return  false
-    }
-}

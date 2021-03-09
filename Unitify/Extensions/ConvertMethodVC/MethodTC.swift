@@ -11,12 +11,22 @@ class MethodTC: UITableViewCell {
 
     @IBOutlet weak var imgMethod: UIImageView!
     @IBOutlet weak var lblMethodName: UILabel!
+    @IBOutlet weak var viwBackground: UIView!
+    @IBOutlet weak var viwImgBack: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupCell()
     }
 
+    
+    func setupCell()  {
+        
+        self.viwBackground.layer.cornerRadius = 10
+        self.viwImgBack.layer.cornerRadius = (self.viwImgBack.frame.height ) / 2
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

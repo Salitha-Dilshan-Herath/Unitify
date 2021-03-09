@@ -14,14 +14,17 @@ protocol UnitifyKeyboardViewDelegate {
     func clearKeyPress() /// mark: when clear button tap this will be fire
     func negativeKeyPress() /// mark: when negative button tap this will be fire
     func keyPress() /// mark: when any button tap this will be fire
+    func keyBoardDoneKeyPress()  /// mark: when done button this will be fire
 }
 
 class UnitifyKeyboardView: UIView {
 
     
     //MARK: - @IBOutlets
+    @IBOutlet var keys: [UIButton]!
     @IBOutlet var viwContent: UIView!
- 
+    @IBOutlet weak var viwOptions: UIView!
+    
     //MARK:- Variables
     var delegate: UnitifyKeyboardViewDelegate?
     
@@ -45,6 +48,8 @@ class UnitifyKeyboardView: UIView {
         addSubview(viwContent)
         viwContent.frame = self.bounds
         viwContent.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viwContent.layer.cornerRadius = 10
+        viwContent.clipsToBounds = true
     }
     
     @IBAction func NumberBtnTap(_ sender: UIButton) {
@@ -68,7 +73,9 @@ class UnitifyKeyboardView: UIView {
         self.delegate?.negativeKeyPress()
         self.delegate?.keyPress()
 
-
     }
     
+    @IBAction func doneBtnPress(_ sender: Any) {
+        self.delegate?.keyBoardDoneKeyPress()
+    }
 }

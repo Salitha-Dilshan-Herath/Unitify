@@ -7,16 +7,17 @@
 
 import UIKit
 
-class TemperatureVC: UIViewController {
-
+class TemperatureVC: BaseViewController {
+    
     //MARK: - @IBOutlet
     @IBOutlet weak var txtCelsius: CustomTextField!
     @IBOutlet weak var txtFahrenheit: CustomTextField!
     @IBOutlet weak var txtKelvin: CustomTextField!
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
-
+    @IBOutlet weak var constraintKeyBoardBottom: NSLayoutConstraint!
+    
     //MARK: - Variables
-    var selectedTextField: UITextField?
+    
     var temperature: Temperature = Temperature()
     
     var celsiusValue: Double = 0.0 {
@@ -37,13 +38,36 @@ class TemperatureVC: UIViewController {
         }
     }
     
+    var isKeyBoardShow: Bool = false {
+        
+        didSet {
+            
+            if isKeyBoardShow {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+                
+                
+                
+            } else {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = -1000
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+        }
+    }
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
-
+    
     //MARK: - Custom Method
     
     ///setup ui
@@ -69,13 +93,13 @@ class TemperatureVC: UIViewController {
         switch textField.tag {
         
         case 1:
-                        
+            
             temperature.convertCelsius(celsius: value)
             self.fahrenheitValue = temperature.fahrenheit
             self.kelvinValue     = temperature.kelvin
-        
+            
             break
-        
+            
         case 2:
             
             temperature.convertFahrenheit(fahrenheit: value)
@@ -86,11 +110,11 @@ class TemperatureVC: UIViewController {
             
         case 3:
             
-
+            
             temperature.convertKelvin(kelvin: value)
             self.celsiusValue    = temperature.celsius
             self.fahrenheitValue = temperature.fahrenheit
-           
+            
             break
             
             
@@ -99,21 +123,36 @@ class TemperatureVC: UIViewController {
             
         }
     }
-}
-
-///Text Field delegate implement
-extension TemperatureVC: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        selectedTextField = textField
+    /// keyboard key press event
+    override func keyPress() {
+        
+        updateCalculation()
+        
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    /// keyboard negative key press event
+    override func negativeKeyPress() {
         
-        if (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) {
-            return true
+        guard let textField = self.selectedTextField else { return }
+        
+        let txt = textField.text!
+        
+        if !txt.contains(Constant.NEGATIVE_CHARACTER) {
+            textField.text!.insert(contentsOf: Constant.NEGATIVE_CHARACTER, at: txt.startIndex)
         }
         
-        return  false
+    }
+    
+    override func textFieldTap() {
+        
+        if !isKeyBoardShow {
+            isKeyBoardShow.toggle()
+        }
+    }
+    
+    override func keyBoardDoneKeyPress() {
+        isKeyBoardShow.toggle()
     }
 }
+

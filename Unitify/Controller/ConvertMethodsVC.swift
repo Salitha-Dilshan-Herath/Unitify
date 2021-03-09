@@ -26,10 +26,9 @@ class ConvertMethodsVC: UIViewController {
 
     //MARK Custom Methods
     private func setupUI() {
+
+        self.setupNavigationBar()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
-       
         tblMethods.tableFooterView = UIView()
         tblMethods.estimatedRowHeight = UITableView.automaticDimension
 

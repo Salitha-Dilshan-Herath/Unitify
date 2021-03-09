@@ -31,7 +31,7 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return tableView.frame.height / 6
+        return 95
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,8 +51,15 @@ extension ConvertMethodsVC: UITableViewDelegate, UITableViewDataSource {
             self.performSegue(withIdentifier: Constant.TEMPERATURE_CONVERTER_SEGUE_IDENTIFY, sender: nil)
 
         case .length:
+            
+            self.performSegue(withIdentifier: Constant.LENGTH_CONVERTER_SEGUE_IDENTIFY, sender: nil)
+
             break
         case .speed:
+            
+            self.performSegue(withIdentifier: Constant.SPEED_CONVERTER_SEGUE_IDENTIFY, sender: nil)
+
+            
             break
         case .volume:
             break
