@@ -50,7 +50,8 @@ extension UIViewController {
         
         keyWindow?.addSubview(statusBar)
         
-        navigationController?.view.backgroundColor = UIColor.white
+        self.navigationController?.view.backgroundColor = UIColor.white
+
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class LengthVC: BaseViewController {
-
+    
     
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
     @IBOutlet weak var txtMeter: CustomTextField!
@@ -18,6 +18,9 @@ class LengthVC: BaseViewController {
     @IBOutlet weak var txtMm: CustomTextField!
     @IBOutlet weak var txtYard: CustomTextField!
     @IBOutlet weak var txtInch: CustomTextField!
+    @IBOutlet weak var viwScrolle: UIScrollView!
+    @IBOutlet weak var constraintTxtFieldViw: NSLayoutConstraint!
+    @IBOutlet weak var constraintKeyBoardBottom: NSLayoutConstraint!
     
     //MARK: - Variables
     var length: Length = Length()
@@ -64,6 +67,38 @@ class LengthVC: BaseViewController {
         }
     }
     
+    var isKeyBoardShow: Bool = false {
+        
+        didSet {
+            
+            if isKeyBoardShow {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+                
+                let extraValue = constraintTxtFieldViw.constant - ( self.view.frame.height / 2 )
+                
+                if extraValue > 0 {
+                    self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + extraValue)
+                }
+                
+            } else {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = -1000
+                    self.view.layoutIfNeeded()
+                })
+                
+                self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+                
+                
+            }
+        }
+    }
+    
+    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +110,9 @@ class LengthVC: BaseViewController {
     
     ///setup ui
     private func setupUI() {
-            viwKeyboard.delegate = self
+        viwKeyboard.delegate = self
+        isKeyBoardShow = false
+
         //        setupTextFields()
     }
     
@@ -120,7 +157,7 @@ class LengthVC: BaseViewController {
             self.centimetersValue  = length.centimeters
             self.yardValue        = length.yard
             self.inchValue        = length.inch
-   
+            
             
             break
             
@@ -135,7 +172,7 @@ class LengthVC: BaseViewController {
             self.inchValue        = length.inch
             
             break
-        
+            
         case 5:
             
             length.convertMm(meter: value)
@@ -159,7 +196,7 @@ class LengthVC: BaseViewController {
             self.inchValue  = length.inch
             
             break
-    
+            
         case 7:
             
             length.convertInch(meter: value)
@@ -169,7 +206,7 @@ class LengthVC: BaseViewController {
             self.centimetersValue  = length.centimeters
             self.millimeterValue   = length.millimeter
             self.yardValue  = length.yard
-    
+            
             break
             
         default:
@@ -183,5 +220,15 @@ class LengthVC: BaseViewController {
     override func keyPress() {
         updateCalculation()
     }
-
+    
+    override func textFieldTap() {
+        
+        if !isKeyBoardShow {
+            isKeyBoardShow.toggle()
+        }
+    }
+    
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
 }

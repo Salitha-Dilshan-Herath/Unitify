@@ -151,7 +151,7 @@ class TemperatureVC: BaseViewController {
         }
     }
     
-    override func keyBoardDoneKeyPress() {
+    override func doneKeyPress() {
         isKeyBoardShow.toggle()
     }
 }

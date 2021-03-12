@@ -72,7 +72,7 @@ class WeightConvertVC: BaseViewController {
                     self.constraintKeyBoardBottom.constant = 0
                     self.view.layoutIfNeeded()
                 })
-                                
+                
                 let extraValue = constraintTxtFieldViw.constant - ( self.view.frame.height / 2 )
                 
                 if extraValue > 0 {
@@ -87,7 +87,7 @@ class WeightConvertVC: BaseViewController {
                 })
                 
                 self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
-
+                
                 
             }
         }
@@ -100,20 +100,48 @@ class WeightConvertVC: BaseViewController {
         setupUI()
     }
     
+    //MARK: - @IBActions
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        self.saveHistoryData(data: self.weight, type: Weight.self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+        
+        let obj =  UserDefaultsManager.getObject(type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+        
+        print(obj)
+        
+    }
+    
+    
     //MARK: - Custom Method
     
     ///setup ui
     private func setupUI() {
-        viwKeyboard.delegate = self
-        isKeyBoardShow = false
-        setupTextFields()
-        //self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: 1000)
+        self.viwKeyboard.delegate = self
+        self.isKeyBoardShow = false
+        
+        self.backgroundNotification()
+        self.loadSessionData()
         
     }
     
-    private func setupTextFields () {
-        txtOunce.text = ""
+    private func loadSessionData () {
         
+        guard let history_weight = UserDefaultsManager.getObject(type: Weight.self, key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA) else {
+            return
+        }
+        
+        self.ounceValue  = history_weight.ounce
+        self.poundValue  = history_weight.pound
+        self.gramValue   = history_weight.gram
+        self.stoneValue  = history_weight.stone
+        self.stonePValue = history_weight.stoneP
+        self.kgValue     = history_weight.kg
+        
+        
+    }
+    
+    override func saveBackgroundData() {
+        UserDefaultsManager.saveObject(data: self.weight, key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
     }
     
     func updateCalculation() {
@@ -198,6 +226,12 @@ class WeightConvertVC: BaseViewController {
         
     }
     
+    /// keyboard done key press event
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
+    
+    /// textfield tap trigger function
     override func textFieldTap() {
         
         if !isKeyBoardShow {
@@ -205,7 +239,4 @@ class WeightConvertVC: BaseViewController {
         }
     }
     
-    override func keyBoardDoneKeyPress() {
-        isKeyBoardShow.toggle()
-    }
 }

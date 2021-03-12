@@ -14,7 +14,7 @@ protocol UnitifyKeyboardViewDelegate {
     func clearKeyPress() /// mark: when clear button tap this will be fire
     func negativeKeyPress() /// mark: when negative button tap this will be fire
     func keyPress() /// mark: when any button tap this will be fire
-    func keyBoardDoneKeyPress()  /// mark: when done button this will be fire
+    func doneKeyPress()  /// mark: when done button this will be fire
 }
 
 class UnitifyKeyboardView: UIView {
@@ -76,6 +76,6 @@ class UnitifyKeyboardView: UIView {
     }
     
     @IBAction func doneBtnPress(_ sender: Any) {
-        self.delegate?.keyBoardDoneKeyPress()
+        self.delegate?.doneKeyPress()
     }
 }

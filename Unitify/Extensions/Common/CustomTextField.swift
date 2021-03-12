@@ -8,19 +8,8 @@
 import UIKit
 
 
-@IBDesignable
-
 class CustomTextField: UITextField {
     
-    @IBInspectable var postfix : String = ""
-    @IBInspectable var removePostfixOnEditing : Bool = true
-    
-    @IBInspectable var isKeyBoardShow: Bool = false {
-        
-        didSet{
-            update()
-        }
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,15 +21,12 @@ class CustomTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        update()
     }
     
     func update()  {
-        
-        if !isKeyBoardShow {
-            inputView = UIView()
-            inputAccessoryView = UIView()
-        }
+        inputView = UIView()
+        inputAccessoryView = UIView()
         
     }
     

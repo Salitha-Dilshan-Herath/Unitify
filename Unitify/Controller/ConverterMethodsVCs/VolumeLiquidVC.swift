@@ -16,6 +16,9 @@ class VolumeLiquidVC: BaseViewController {
     @IBOutlet weak var txtPint: CustomTextField!
     @IBOutlet weak var txtFOunce: CustomTextField!
     @IBOutlet weak var txtMillilitre: CustomTextField!
+    @IBOutlet weak var viwScrolle: UIScrollView!
+    @IBOutlet weak var constraintTxtFieldViw: NSLayoutConstraint!
+    @IBOutlet weak var constraintKeyBoardBottom: NSLayoutConstraint!
     
     //MARK: - Variables
     var liquid: Liquid = Liquid()
@@ -50,6 +53,37 @@ class VolumeLiquidVC: BaseViewController {
         }
     }
     
+    var isKeyBoardShow: Bool = false {
+        
+        didSet {
+            
+            if isKeyBoardShow {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+                
+                let extraValue = constraintTxtFieldViw.constant - ( self.view.frame.height / 2 )
+                
+                if extraValue > 0 {
+                    self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + extraValue)
+                }
+                
+            } else {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = -1000
+                    self.view.layoutIfNeeded()
+                })
+                
+                self.viwScrolle.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+                
+                
+            }
+        }
+    }
+    
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -62,7 +96,9 @@ class VolumeLiquidVC: BaseViewController {
     
     ///setup ui
     private func setupUI() {
-            viwKeyboard.delegate = self
+        viwKeyboard.delegate = self
+        isKeyBoardShow = false
+        
         //        setupTextFields()
     }
     
@@ -137,5 +173,15 @@ class VolumeLiquidVC: BaseViewController {
         updateCalculation()
     }
     
+    override func textFieldTap() {
+        
+        if !isKeyBoardShow {
+            isKeyBoardShow.toggle()
+        }
+    }
+    
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
 }
 

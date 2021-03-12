@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E503C9EE25F8930800C4C98F /* UserDefualtsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503C9ED25F8930800C4C98F /* UserDefualtsManager.swift */; };
+		E503CA0825FB072D00C4C98F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA0725FB072D00C4C98F /* Alert.swift */; };
+		E503CA0B25FB210500C4C98F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA0A25FB210500C4C98F /* Helper.swift */; };
 		E547D89B25CEF8D10082CFD2 /* ConvertMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */; };
 		E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */; };
 		E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A225CF05950082CFD2 /* MethodTC.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E503C9ED25F8930800C4C98F /* UserDefualtsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefualtsManager.swift; sourceTree = "<group>"; };
+		E503CA0725FB072D00C4C98F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		E503CA0A25FB210500C4C98F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsVC.swift; sourceTree = "<group>"; };
 		E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsTBV.swift; sourceTree = "<group>"; };
 		E547D8A225CF05950082CFD2 /* MethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTC.swift; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 				E5BCF09225CFCEED007284C0 /* CommonExtentions.swift */,
 				E5BCF0A725D07249007284C0 /* CustomTextField.swift */,
 				E5DE40EE25F3D31C00655F5F /* BaseViewController.swift */,
+				E503C9ED25F8930800C4C98F /* UserDefualtsManager.swift */,
+				E503CA0725FB072D00C4C98F /* Alert.swift */,
+				E503CA0A25FB210500C4C98F /* Helper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 				E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */,
 				E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */,
 				E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */,
+				E503CA0825FB072D00C4C98F /* Alert.swift in Sources */,
 				E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */,
 				E5F1CA8B25F0A3C600E45E54 /* Liquid.swift in Sources */,
 				E5C5DFD625ED59FA00430A61 /* VolumeLiquidVC.swift in Sources */,
@@ -290,6 +300,8 @@
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
 				E5DE40F925F3F8BD00655F5F /* Length.swift in Sources */,
+				E503C9EE25F8930800C4C98F /* UserDefualtsManager.swift in Sources */,
+				E503CA0B25FB210500C4C98F /* Helper.swift in Sources */,
 				E5C5DFCC25E9DB4600430A61 /* Temperature.swift in Sources */,
 				E547D8A725CF060E0082CFD2 /* Constants.swift in Sources */,
 			);

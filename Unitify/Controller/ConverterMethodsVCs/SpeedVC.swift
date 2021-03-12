@@ -8,13 +8,14 @@
 import UIKit
 
 class SpeedVC: BaseViewController {
-
+    
     //MARK: - @IBOutlet
     @IBOutlet weak var viwKeyboard: UnitifyKeyboardView!
     @IBOutlet weak var txtMs: CustomTextField!
     @IBOutlet weak var txtKmh: CustomTextField!
     @IBOutlet weak var txtMh: CustomTextField!
     @IBOutlet weak var txtKnot: CustomTextField!
+    @IBOutlet weak var constraintKeyBoardBottom: NSLayoutConstraint!
     
     //MARK: - Variables
     var speed: Speed = Speed()
@@ -42,7 +43,32 @@ class SpeedVC: BaseViewController {
             txtKnot.text = String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", knotValue)
         }
     }
- 
+    
+    var isKeyBoardShow: Bool = false {
+        
+        didSet {
+            
+            if isKeyBoardShow {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+                
+                
+                
+            } else {
+                
+                UIView.animate(withDuration: Double(0.5), animations: {
+                    self.constraintKeyBoardBottom.constant = -1000
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+        }
+    }
+    
+    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +80,9 @@ class SpeedVC: BaseViewController {
     
     ///setup ui
     private func setupUI() {
-            viwKeyboard.delegate = self
+        viwKeyboard.delegate = self
+        isKeyBoardShow = false
+        
         //        setupTextFields()
     }
     
@@ -103,7 +131,7 @@ class SpeedVC: BaseViewController {
             
             break
             
-    
+            
         default:
             break
             
@@ -115,4 +143,14 @@ class SpeedVC: BaseViewController {
         updateCalculation()
     }
     
+    override func textFieldTap() {
+        
+        if !isKeyBoardShow {
+            isKeyBoardShow.toggle()
+        }
+    }
+    
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
 }
