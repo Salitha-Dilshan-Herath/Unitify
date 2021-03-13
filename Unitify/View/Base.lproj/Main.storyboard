@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="SF0-Ka-AoS">
             <objects>
-                <tabBarController id="MW4-5y-abZ" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="MW4-5y-abZ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VKf-mJ-tfl"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6Qf-cu-hCe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -128,7 +128,7 @@
                             <constraint firstItem="lGb-gZ-JAx" firstAttribute="top" secondItem="Avy-vq-0Lw" secondAttribute="top" id="krX-Ll-oS5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Units" largeTitleDisplayMode="never" id="CKy-Gp-ORF">
+                    <navigationItem key="navigationItem" title="Units" largeTitleDisplayMode="always" id="CKy-Gp-ORF">
                         <barButtonItem key="rightBarButtonItem" title="Help" id="yDp-Qr-RLn">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -515,12 +515,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weight" largeTitleDisplayMode="never" id="VvV-gA-CPk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xC4-6i-tKY">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="saveBtnTap:" destination="Pwi-9o-i7W" id="YZU-zn-1OJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="xC4-6i-tKY">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="saveBtnTap:" destination="Pwi-9o-i7W" id="YZU-zn-1OJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="g81-Df-jWr">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="constraintKeyBoardBottom" destination="ybw-bJ-vAv" id="sSd-nJ-OP6"/>
@@ -736,7 +741,14 @@
                             <constraint firstItem="6xU-JR-mw7" firstAttribute="height" secondItem="bnn-Pf-o0p" secondAttribute="height" multiplier="1:2.1" id="ndU-KD-d7v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Temperature" largeTitleDisplayMode="never" id="9cQ-wH-333"/>
+                    <navigationItem key="navigationItem" title="Temperature" largeTitleDisplayMode="never" id="9cQ-wH-333">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="i8d-le-21o">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveBtnTap:" destination="Wcp-zF-j9p" id="Owc-n8-QHF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="constraintKeyBoardBottom" destination="Wei-Gr-Opg" id="7Lb-Xc-EEN"/>
                         <outlet property="txtCelsius" destination="fd7-mg-H2A" id="fYj-8Z-20s"/>
@@ -768,7 +780,7 @@
         <!--Units-->
         <scene sceneID="O5A-Ed-95E">
             <objects>
-                <navigationController id="9Zw-mF-rKU" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="9Zw-mF-rKU" customClass="MainNav" customModule="Unitify" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Units" image="bolt.circle.fill" catalog="system" id="6ti-Dn-KBh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="gdB-Qt-uUG">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -793,7 +805,7 @@
         <!--Setting-->
         <scene sceneID="tsY-Xm-ZrB">
             <objects>
-                <navigationController id="h6i-ee-ndh" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="h6i-ee-ndh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="gear" catalog="system" id="twP-AE-Obw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HfK-be-ANf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1162,7 +1174,14 @@
                             <constraint firstItem="F3n-X7-dbR" firstAttribute="bottom" secondItem="Ddj-tk-uP9" secondAttribute="bottom" id="msO-mi-SUN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Liquid" largeTitleDisplayMode="never" id="1ig-nf-9dM"/>
+                    <navigationItem key="navigationItem" title="Liquid" largeTitleDisplayMode="never" id="1ig-nf-9dM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="84S-pZ-Axx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveBtnTap:" destination="6RP-4T-MGB" id="k4c-2D-0TQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="constraintKeyBoardBottom" destination="Wl3-qh-zv5" id="Vyt-Hv-wWj"/>
                         <outlet property="constraintTxtFieldViw" destination="YLR-HD-wnM" id="cfH-ga-ZPU"/>
@@ -1429,7 +1448,14 @@
                             <constraint firstItem="bxx-mt-yne" firstAttribute="trailing" secondItem="zus-iP-XPj" secondAttribute="trailing" id="yvJ-uL-FfR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Speed" largeTitleDisplayMode="never" id="6GR-fy-nm5"/>
+                    <navigationItem key="navigationItem" title="Speed" largeTitleDisplayMode="never" id="6GR-fy-nm5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bKm-LP-dLf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveBtnTap:" destination="ZFl-MN-hWJ" id="D9b-tk-7Pe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="constraintKeyBoardBottom" destination="h2o-b4-iRE" id="kmo-p8-GN9"/>
                         <outlet property="txtKmh" destination="S9w-Y0-6f6" id="vsi-io-bVb"/>
@@ -1868,7 +1894,14 @@
                             <constraint firstItem="soh-Nj-4Ne" firstAttribute="leading" secondItem="y0L-D9-olX" secondAttribute="leading" id="vJr-cn-G9a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Length" largeTitleDisplayMode="never" id="ddS-ft-Olx"/>
+                    <navigationItem key="navigationItem" title="Length" largeTitleDisplayMode="never" id="ddS-ft-Olx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fQc-Ka-NR5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveBtnTap:" destination="hqY-8N-YaX" id="nwk-33-fuH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="constraintKeyBoardBottom" destination="pz9-uS-78f" id="BPK-Qc-1Hj"/>
                         <outlet property="constraintTxtFieldViw" destination="YGX-gw-L7h" id="L7m-0b-jQ9"/>

@@ -78,22 +78,22 @@ class BaseViewController: UIViewController, UnitifyKeyboardViewDelegate {
     @objc func saveBackgroundData() {
     }
     
-    func saveHistoryData<T: Codable>(data: T, type: T.Type, key: String)  {
+    func saveHistoryData<T: Codable>(data: T, type: [T].Type, key: String)  {
         
-        if var history_data = UserDefaultsManager.getObject(type: type.self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA) as? [T]{
+        if var history_data = UserDefaultsManager.getObject(type: type.self, key: key){
          
             if history_data.count == 5 {
                 history_data.removeFirst()
             }
             
             history_data.append(data)
-            UserDefaultsManager.saveObject(data: history_data, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+            UserDefaultsManager.saveObject(data: history_data, key: key)
             
         } else {
-            UserDefaultsManager.saveObject(data: [data], key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+            UserDefaultsManager.saveObject(data: [data], key: key)
         }
         
-        Alert.showMessage(msg: "Calculation saved in history successfully.", on: self)
+        Alert.showMessage(msg: Constant.HISTORY_DATA_SAVE_SUCCESS, on: self)
 
     }
 }

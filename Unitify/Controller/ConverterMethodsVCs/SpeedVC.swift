@@ -68,7 +68,6 @@ class SpeedVC: BaseViewController {
         }
     }
     
-    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,14 +75,55 @@ class SpeedVC: BaseViewController {
         setupUI()
     }
     
+    //MARK: - @IBActions
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        if let history_data = UserDefaultsManager.getObject(type: [Speed].self, key: Constant.HISTORY_MANAGER_STORE_SPEED_DATA){
+         
+            if history_data.contains(where: {$0  == self.speed}) {
+                
+                Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
+                
+            } else {
+                
+                self.saveHistoryData(data: self.speed, type: [Speed].self, key: Constant.HISTORY_MANAGER_STORE_SPEED_DATA)
+            }
+        } else {
+            self.saveHistoryData(data: self.speed, type: [Speed].self, key: Constant.HISTORY_MANAGER_STORE_SPEED_DATA)
+        }
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
     private func setupUI() {
-        viwKeyboard.delegate = self
-        isKeyBoardShow = false
+        self.viwKeyboard.delegate = self
+        self.isKeyBoardShow = false
         
-        //        setupTextFields()
+        self.backgroundNotification()
+        self.loadSessionData()
+        
+    }
+    
+    private func loadSessionData () {
+        
+        guard let history_speed = UserDefaultsManager.getObject(type: Speed.self, key: Constant.SESSION_MANAGER_STORE_SPEED_DATA) else {
+            return
+        }
+        
+        self.speed     = history_speed
+        self.msValue   = history_speed.ms
+        self.kmhValue  = history_speed.kmh
+        self.mhValue   = history_speed.mh
+        self.knotValue = history_speed.knot
+     
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_SPEED_DATA)
+
+    }
+    
+    override func saveBackgroundData() {
+        UserDefaultsManager.saveObject(data: self.speed, key: Constant.SESSION_MANAGER_STORE_SPEED_DATA)
     }
     
     func updateCalculation() {

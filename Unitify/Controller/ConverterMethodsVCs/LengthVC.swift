@@ -106,14 +106,58 @@ class LengthVC: BaseViewController {
         setupUI()
     }
     
+    //MARK: - @IBActions
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        if let history_data = UserDefaultsManager.getObject(type: [Length].self, key: Constant.HISTORY_MANAGER_STORE_LENGTH_DATA){
+         
+            if history_data.contains(where: {$0  == self.length}) {
+                
+                Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
+                
+            } else {
+                
+                self.saveHistoryData(data: self.length, type: [Length].self, key: Constant.HISTORY_MANAGER_STORE_LENGTH_DATA)
+            }
+        } else {
+            self.saveHistoryData(data: self.length, type: [Length].self, key: Constant.HISTORY_MANAGER_STORE_LENGTH_DATA)
+        }
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
     private func setupUI() {
-        viwKeyboard.delegate = self
-        isKeyBoardShow = false
+        self.viwKeyboard.delegate = self
+        self.isKeyBoardShow = false
+        
+        self.backgroundNotification()
+        self.loadSessionData()
+        
+    }
+    
+    private func loadSessionData () {
+        
+        guard let history_length = UserDefaultsManager.getObject(type: Length.self, key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA) else {
+            return
+        }
+        
+        self.length     = history_length
+        self.meterValue        = history_length.meter
+        self.kilometerValue    = history_length.kilometer
+        self.mileValue         = history_length.mile
+        self.centimetersValue  = history_length.centimeters
+        self.millimeterValue   = history_length.millimeter
+        self.yardValue         = history_length.yard
+        self.inchValue         = history_length.inch
 
-        //        setupTextFields()
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA)
+
+    }
+    
+    override func saveBackgroundData() {
+        UserDefaultsManager.saveObject(data: self.length, key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA)
     }
     
     func updateCalculation() {

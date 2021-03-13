@@ -61,6 +61,7 @@ class TemperatureVC: BaseViewController {
             }
         }
     }
+    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,20 +69,50 @@ class TemperatureVC: BaseViewController {
         setupUI()
     }
     
+    //MARK: - @IBActions
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        
+        if let history_data = UserDefaultsManager.getObject(type: [Temperature].self, key: Constant.HISTORY_MANAGER_STORE_TEMPERATURE_DATA){
+         
+            if history_data.contains(where: {$0  == self.temperature}) {
+                
+                Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
+                
+            } else {
+                
+                self.saveHistoryData(data: self.temperature, type: [Temperature].self, key: Constant.HISTORY_MANAGER_STORE_TEMPERATURE_DATA)
+            }
+        } else {
+            self.saveHistoryData(data: self.temperature, type: [Temperature].self, key: Constant.HISTORY_MANAGER_STORE_TEMPERATURE_DATA)
+        }
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
     private func setupUI() {
         viwKeyboard.delegate = self
-        
-        setupTextFields()
+        self.backgroundNotification()
+        self.loadSessionData()
     }
     
-    private func setupTextFields () {
-        txtCelsius.text    = ""
-        txtFahrenheit.text = ""
-        txtKelvin.text     = ""
+    private func loadSessionData () {
         
+        guard let history_temp = UserDefaultsManager.getObject(type: Temperature.self, key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA) else {
+            return
+        }
+        
+        self.temperature = history_temp
+        self.celsiusValue    = history_temp.celsius
+        self.kelvinValue     = history_temp.kelvin
+        self.fahrenheitValue = history_temp.fahrenheit
+
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA)
+    }
+    
+    override func saveBackgroundData() {
+        UserDefaultsManager.saveObject(data: self.temperature, key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA)
     }
     
     func updateCalculation() {
@@ -144,15 +175,18 @@ class TemperatureVC: BaseViewController {
         
     }
     
+    /// keyboard done key press event
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
+    
+    /// textfield tap trigger function
     override func textFieldTap() {
         
         if !isKeyBoardShow {
             isKeyBoardShow.toggle()
         }
     }
-    
-    override func doneKeyPress() {
-        isKeyBoardShow.toggle()
-    }
+
 }
 

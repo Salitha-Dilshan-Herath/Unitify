@@ -92,14 +92,53 @@ class VolumeLiquidVC: BaseViewController {
         setupUI()
     }
     
+    //MARK: - @IBActions
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        if let history_data = UserDefaultsManager.getObject(type: [Liquid].self, key: Constant.HISTORY_MANAGER_STORE_LIQUID_DATA){
+         
+            if history_data.contains(where: {$0  == self.liquid}) {
+                
+                Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
+                
+            } else {
+                
+                self.saveHistoryData(data: self.liquid, type: [Liquid].self, key: Constant.HISTORY_MANAGER_STORE_LIQUID_DATA)
+            }
+        } else {
+            self.saveHistoryData(data: self.liquid, type: [Liquid].self, key: Constant.HISTORY_MANAGER_STORE_LIQUID_DATA)
+        }
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
     private func setupUI() {
         viwKeyboard.delegate = self
         isKeyBoardShow = false
+        self.backgroundNotification()
+        self.loadSessionData()
+    }
+    
+    private func loadSessionData () {
         
-        //        setupTextFields()
+        guard let history_liquid = UserDefaultsManager.getObject(type: Liquid.self, key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA) else {
+            return
+        }
+        
+        self.liquid = history_liquid
+        self.gallonValue     = history_liquid.gallon
+        self.litreValue      = history_liquid.litre
+        self.pintValue       = history_liquid.pint
+        self.fluidValue      = history_liquid.fluid
+        self.millilitreValue = history_liquid.millilitre
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA)
+
+    }
+    
+    override func saveBackgroundData() {
+        UserDefaultsManager.saveObject(data: self.liquid, key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA)
     }
     
     func updateCalculation() {
@@ -173,15 +212,17 @@ class VolumeLiquidVC: BaseViewController {
         updateCalculation()
     }
     
+    /// keyboard done key press event
+    override func doneKeyPress() {
+        isKeyBoardShow.toggle()
+    }
+    
+    /// textfield tap trigger function
     override func textFieldTap() {
         
         if !isKeyBoardShow {
             isKeyBoardShow.toggle()
         }
-    }
-    
-    override func doneKeyPress() {
-        isKeyBoardShow.toggle()
     }
 }
 

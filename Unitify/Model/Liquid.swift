@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Liquid: Codable {
+class Liquid: Codable, Equatable {
     
     var gallon: Double
     var litre: Double
@@ -28,6 +28,7 @@ class Liquid: Codable {
         
         let gallon = Measurement(value: value, unit: UnitVolume.imperialGallons)
         
+        self.gallon = value
         self.litre = gallon.converted(to: .liters).value
         self.pint  = gallon.converted(to: .imperialPints).value
         self.fluid = gallon.converted(to: .fluidOunces).value
@@ -39,6 +40,8 @@ class Liquid: Codable {
         
         let litre = Measurement(value: value, unit: UnitVolume.liters)
         
+        self.litre = value
+
         self.gallon = litre.converted(to: .imperialGallons).value
         self.pint   = litre.converted(to: .imperialPints).value
         self.fluid  = litre.converted(to: .fluidOunces).value
@@ -50,6 +53,8 @@ class Liquid: Codable {
         
         let pint = Measurement(value: value, unit: UnitVolume.imperialPints)
         
+        self.pint = value
+
         self.gallon = pint.converted(to: .imperialGallons).value
         self.litre  = pint.converted(to: .liters).value
         self.fluid  = pint.converted(to: .fluidOunces).value
@@ -61,6 +66,8 @@ class Liquid: Codable {
         
         let fluid = Measurement(value: value, unit: UnitVolume.fluidOunces)
         
+        self.fluid = value
+
         self.gallon = fluid.converted(to: .imperialGallons).value
         self.litre  = fluid.converted(to: .liters).value
         self.pint   = fluid.converted(to: .imperialPints).value
@@ -72,6 +79,8 @@ class Liquid: Codable {
         
         let ml = Measurement(value: value, unit: UnitVolume.milliliters)
         
+        self.millilitre = value
+
         self.gallon = ml.converted(to: .imperialGallons).value
         self.litre  = ml.converted(to: .liters).value
         self.pint   = ml.converted(to: .imperialPints).value
@@ -80,4 +89,7 @@ class Liquid: Codable {
     }
 
     
+    static func == (lhs: Liquid, rhs: Liquid) -> Bool {
+        return lhs.gallon == rhs.gallon
+    }
 }

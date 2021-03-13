@@ -103,12 +103,19 @@ class WeightConvertVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
-        self.saveHistoryData(data: self.weight, type: Weight.self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
-        
-        let obj =  UserDefaultsManager.getObject(type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
-        
-        print(obj)
-        
+        if let history_data = UserDefaultsManager.getObject(type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA){
+         
+            if history_data.contains(where: {$0  == self.weight}) {
+                
+                Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
+                
+            } else {
+                
+                self.saveHistoryData(data: self.weight, type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+            }
+        } else {
+            self.saveHistoryData(data: self.weight, type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA)
+        }
     }
     
     
@@ -130,6 +137,7 @@ class WeightConvertVC: BaseViewController {
             return
         }
         
+        self.weight = history_weight
         self.ounceValue  = history_weight.ounce
         self.poundValue  = history_weight.pound
         self.gramValue   = history_weight.gram
@@ -137,7 +145,8 @@ class WeightConvertVC: BaseViewController {
         self.stonePValue = history_weight.stoneP
         self.kgValue     = history_weight.kg
         
-        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+
     }
     
     override func saveBackgroundData() {

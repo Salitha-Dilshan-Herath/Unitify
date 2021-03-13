@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Speed: Codable {
+class Speed: Codable, Equatable {
     
     var ms: Double
     var kmh: Double
@@ -27,6 +27,7 @@ class Speed: Codable {
         
         let ms = Measurement(value: value, unit: UnitSpeed.metersPerSecond)
         
+        self.ms   = value
         self.kmh  = ms.converted(to: .kilometersPerHour).value
         self.mh   = ms.converted(to: .milesPerHour).value
         self.knot = ms.converted(to: .knots).value
@@ -37,6 +38,7 @@ class Speed: Codable {
         
         let kmh = Measurement(value: value, unit: UnitSpeed.kilometersPerHour)
 
+        self.kmh  = value
         self.ms   = kmh.converted(to: .metersPerSecond).value
         self.mh   = kmh.converted(to: .milesPerHour).value
         self.knot = kmh.converted(to: .knots).value
@@ -46,6 +48,7 @@ class Speed: Codable {
         
         let mh = Measurement(value: value, unit: UnitSpeed.milesPerHour)
 
+        self.mh   = value
         self.ms   = mh.converted(to: .metersPerSecond).value
         self.kmh  = mh.converted(to: .kilometersPerHour).value
         self.knot = mh.converted(to: .knots).value
@@ -55,8 +58,13 @@ class Speed: Codable {
         
         let knot = Measurement(value: value, unit: UnitSpeed.knots)
 
+        self.knot = value
         self.ms  = knot.converted(to: .metersPerSecond).value
         self.kmh = knot.converted(to: .kilometersPerHour).value
         self.mh  = knot.converted(to: .milesPerHour).value
+    }
+    
+    static func == (lhs: Speed, rhs: Speed) -> Bool {
+        return lhs.ms == rhs.ms
     }
 }

@@ -35,5 +35,8 @@ struct Constant {
     static let HISTORY_MANAGER_STORE_SPEED_DATA       = "com.Unitify.HISTORY_MANAGER_STORE_SPEED_DATA"
     static let HISTORY_MANAGER_STORE_LENGTH_DATA      = "com.Unitify.HISTORY_MANAGER_STORE_LENGTH_DATA"
     
-    static let ALERT_HEDER = "Unitify"
+    static let ALERT_HEADER = "Unitify"
+    static let HISTORY_DATA_SAVE_SUCCESS    =  "Calculation saved in history successfully."
+    static let HISTORY_DATA_ALREADY_EXISTS  =  "This calculation is already saved. Please try another calculation."
+
 }

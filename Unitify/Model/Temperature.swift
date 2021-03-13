@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Temperature: Codable {
-    
+class Temperature: Codable, Equatable {
+
     var celsius: Double 
     var fahrenheit: Double
     var kelvin: Double
@@ -45,4 +45,10 @@ class Temperature: Codable {
         self.celsius    = kelvin.converted(to: .celsius).value
         self.fahrenheit = kelvin.converted(to: .fahrenheit).value
     }
+    
+    static func == (lhs: Temperature, rhs: Temperature) -> Bool {
+        return lhs.celsius == rhs.celsius
+    }
+    
+    
 }

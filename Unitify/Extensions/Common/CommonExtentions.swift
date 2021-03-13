@@ -35,21 +35,7 @@ extension UIViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.navigationBar.barTintColor = UIColor().getNavigationColor()
         self.navigationController?.navigationBar.tintColor = UIColor.white
-
-        let keyWindow = UIApplication.shared.connectedScenes
-                .filter({$0.activationState == .foregroundActive})
-                .map({$0 as? UIWindowScene})
-                .compactMap({$0})
-                .first?.windows
-                .filter({$0.isKeyWindow}).first
-        
-        let statusBar = UIView(frame: keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-           statusBar.backgroundColor = #colorLiteral(red: 0.8589604497, green: 0.3303647041, blue: 0.3605391979, alpha: 1)
-        
-        keyWindow?.addSubview(statusBar)
-        
         self.navigationController?.view.backgroundColor = UIColor.white
 
     }

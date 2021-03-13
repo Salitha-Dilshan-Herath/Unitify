@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Length: Codable {
+class Length: Codable, Equatable {
     
     var meter: Double
     var kilometer: Double
@@ -33,6 +33,7 @@ class Length: Codable {
         
         let meter = Measurement(value: value, unit: UnitLength.meters)
         
+        self.meter       = value
         self.kilometer   = meter.converted(to: .kilometers).value
         self.mile        = meter.converted(to: .miles).value
         self.centimeters = meter.converted(to: .centimeters).value
@@ -46,6 +47,7 @@ class Length: Codable {
         
         let km = Measurement(value: value, unit: UnitLength.kilometers)
         
+        self.kilometer   = value
         self.meter       = km.converted(to: .meters).value
         self.mile        = km.converted(to: .miles).value
         self.centimeters = km.converted(to: .centimeters).value
@@ -59,6 +61,7 @@ class Length: Codable {
         
         let mile = Measurement(value: value, unit: UnitLength.miles)
         
+        self.mile        = value
         self.meter       = mile.converted(to: .meters).value
         self.kilometer   = mile.converted(to: .kilometers).value
         self.centimeters = mile.converted(to: .centimeters).value
@@ -72,6 +75,7 @@ class Length: Codable {
         
         let cm = Measurement(value: value, unit: UnitLength.centimeters)
         
+        self.centimeters = value
         self.kilometer   = cm.converted(to: .kilometers).value
         self.mile        = cm.converted(to: .miles).value
         self.meter       = cm.converted(to: .meters).value
@@ -85,6 +89,7 @@ class Length: Codable {
         
         let mm = Measurement(value: value, unit: UnitLength.millimeters)
         
+        self.millimeter  = value
         self.kilometer   = mm.converted(to: .kilometers).value
         self.mile        = mm.converted(to: .miles).value
         self.meter       = mm.converted(to: .meters).value
@@ -98,6 +103,7 @@ class Length: Codable {
         
         let yard = Measurement(value: value, unit: UnitLength.yards)
         
+        self.yard        = value
         self.kilometer   = yard.converted(to: .kilometers).value
         self.mile        = yard.converted(to: .miles).value
         self.centimeters = yard.converted(to: .centimeters).value
@@ -111,6 +117,7 @@ class Length: Codable {
         
         let inch = Measurement(value: value, unit: UnitLength.inches)
         
+        self.inch        = value
         self.kilometer   = inch.converted(to: .kilometers).value
         self.mile        = inch.converted(to: .miles).value
         self.centimeters = inch.converted(to: .centimeters).value
@@ -119,4 +126,9 @@ class Length: Codable {
         self.meter       = inch.converted(to: .meters).value
     
     }
+    
+    static func == (lhs: Length, rhs: Length) -> Bool {
+       return lhs.centimeters == rhs.centimeters
+    }
+    
 }

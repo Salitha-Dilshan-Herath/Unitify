@@ -8,8 +8,8 @@
 import Foundation
 
 
-class Weight: Codable {
-    
+class Weight: Codable, Equatable {
+   
     var ounce: Double
     var pound: Double
     var gram: Double
@@ -46,6 +46,7 @@ class Weight: Codable {
         
         let pound = Measurement(value: value, unit: UnitMass.pounds)
         
+        self.pound = value
         self.ounce = pound.converted(to: .ounces).value
         self.gram  = pound.converted(to: .grams).value
         self.stone = pound.converted(to: .stones).value
@@ -60,6 +61,7 @@ class Weight: Codable {
         
         let gram = Measurement(value: value, unit: UnitMass.grams)
         
+        self.gram  = value
         self.ounce = gram.converted(to: .ounces).value
         self.pound = gram.converted(to: .pounds).value
         self.stone = gram.converted(to: .stones).value
@@ -73,6 +75,7 @@ class Weight: Codable {
         
         let stone = Measurement(value: value, unit: UnitMass.stones)
         
+        self.stone = value
         self.ounce = stone.converted(to: .ounces).value
         self.pound = stone.converted(to: .pounds).value
         self.gram  = stone.converted(to: .grams).value
@@ -84,7 +87,8 @@ class Weight: Codable {
     func convertKg(kg value: Double)  {
         
         let kg = Measurement(value: value, unit: UnitMass.kilograms)
-        
+         
+        self.kg    = value
         self.ounce = kg.converted(to: .ounces).value
         self.pound = kg.converted(to: .pounds).value
         self.stone = kg.converted(to: .stones).value
@@ -94,5 +98,8 @@ class Weight: Codable {
         self.stoneP   =  remainingStone.converted(to: .pounds).value
     }
     
+    static func == (lhs: Weight, rhs: Weight) -> Bool {
+        lhs.gram == rhs.gram
+    }
     
 }

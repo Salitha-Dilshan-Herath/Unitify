@@ -41,7 +41,7 @@ struct UserDefaultsManager {
     
     static func getObject<T: Codable>(type: T.Type, key: String) -> T? {
         
-        if let data = UserDefaults.standard.data(forKey: key) {
+        if let data = userDefaults.data(forKey: key) {
             do {
                 
                 return try decoder.decode(type, from: data)
@@ -52,6 +52,11 @@ struct UserDefaultsManager {
         }
         
         return nil
+    }
+    
+    static func removeObject(key: String) {
+        
+        userDefaults.removeObject(forKey: key)
     }
     
 }

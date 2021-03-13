@@ -17,6 +17,6 @@ struct Alert {
     }
 
     static func showMessage(msg: String,on vc:UIViewController){
-        showBasicAlert(on: vc, with:Constant.ALERT_HEDER, message: msg)
+        showBasicAlert(on: vc, with:Constant.ALERT_HEADER, message: msg)
     }
 }
