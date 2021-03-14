@@ -9,6 +9,13 @@ import UIKit
 
 class HistoryVC: UIViewController {
     
+    //MARK: - @IBOutltes
+    @IBOutlet weak var tblMethods: UITableView!
+    
+    //MARK: - Variables
+    let methods: [ConvertTypes] = [.weight, .temperature,.volume, .volumeliquid, .length, .speed]
+    var selectedCell = -1
+    
     //MARK: - Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +38,11 @@ class HistoryVC: UIViewController {
         
         self.setupNavigationBar()
         
+        tblMethods.tableFooterView = UIView()
+        tblMethods.estimatedRowHeight = UITableView.automaticDimension
         
+        DispatchQueue.main.async {
+            self.tblMethods.reloadWithAnimation()
+        }
     }
 }

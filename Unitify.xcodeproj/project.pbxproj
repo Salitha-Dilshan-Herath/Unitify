@@ -14,6 +14,8 @@
 		E503CA1C25FD171100C4C98F /* VolumeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA1B25FD171100C4C98F /* VolumeVC.swift */; };
 		E503CA2225FDA52F00C4C98F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2125FDA52F00C4C98F /* SettingsVC.swift */; };
 		E503CA2625FE3ACF00C4C98F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2525FE3ACE00C4C98F /* HistoryVC.swift */; };
+		E503CA2A25FE599F00C4C98F /* HisotryTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2925FE599F00C4C98F /* HisotryTBV.swift */; };
+		E503CA2D25FE662900C4C98F /* HistoryMethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */; };
 		E547D89B25CEF8D10082CFD2 /* ConvertMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */; };
 		E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */; };
 		E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A225CF05950082CFD2 /* MethodTC.swift */; };
@@ -48,6 +50,8 @@
 		E503CA1B25FD171100C4C98F /* VolumeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeVC.swift; sourceTree = "<group>"; };
 		E503CA2125FDA52F00C4C98F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E503CA2525FE3ACE00C4C98F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		E503CA2925FE599F00C4C98F /* HisotryTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisotryTBV.swift; sourceTree = "<group>"; };
+		E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMethodTC.swift; sourceTree = "<group>"; };
 		E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsVC.swift; sourceTree = "<group>"; };
 		E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsTBV.swift; sourceTree = "<group>"; };
 		E547D8A225CF05950082CFD2 /* MethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTC.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E503CA2825FE593E00C4C98F /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				E503CA2925FE599F00C4C98F /* HisotryTBV.swift */,
+				E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */,
+			);
+			path = HistoryVC;
+			sourceTree = "<group>";
+		};
 		E547D88F25CE2FF10082CFD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 		E547D89D25CF03E30082CFD2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E503CA2825FE593E00C4C98F /* HistoryVC */,
 				E5FC65EE25D2460700AC5D40 /* Common */,
 				E547D8A125CF05710082CFD2 /* ConvertMethodVC */,
 			);
@@ -298,9 +312,11 @@
 				E5BCF08A25CFC237007284C0 /* UnitifyKeyboardView.swift in Sources */,
 				E5DE40E625F3372300655F5F /* Speed.swift in Sources */,
 				E573E02425D8FC2200C58CF1 /* TemperatureVC.swift in Sources */,
+				E503CA2A25FE599F00C4C98F /* HisotryTBV.swift in Sources */,
 				E5BCF08E25CFC4E7007284C0 /* WeightConvertVC.swift in Sources */,
 				E5C5DFCF25E9E40C00430A61 /* Weight.swift in Sources */,
 				E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */,
+				E503CA2D25FE662900C4C98F /* HistoryMethodTC.swift in Sources */,
 				E503CA0825FB072D00C4C98F /* Alert.swift in Sources */,
 				E503CA1625FB78FD00C4C98F /* CustomNavigationBar.swift in Sources */,
 				E5BCF0A825D07249007284C0 /* CustomTextField.swift in Sources */,
