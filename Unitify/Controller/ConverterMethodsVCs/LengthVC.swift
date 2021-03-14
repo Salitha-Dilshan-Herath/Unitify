@@ -195,10 +195,10 @@ class LengthVC: BaseViewController {
         case 3:
             
             length.convertMile(mile: value)
-            self.meterValue  = length.meter
-            self.kilometerValue  = length.kilometer
+            self.meterValue       = length.meter
+            self.kilometerValue   = length.kilometer
             self.millimeterValue  = length.millimeter
-            self.centimetersValue  = length.centimeters
+            self.centimetersValue = length.centimeters
             self.yardValue        = length.yard
             self.inchValue        = length.inch
             

@@ -17,14 +17,24 @@ struct UserDefaultsManager {
     private static let decoder = JSONDecoder()
     
     
-    static func saveString(data: String, key: String)  {
+    static func save(data: Any, key: String)  {
         
         userDefaults.setValue(data, forKey: key)
     }
     
-    static func getString(data: String, key: String) -> String?  {
+    static func getString(key: String) -> String?  {
         
         return userDefaults.string(forKey: key)
+    }
+    
+    static func getInt(key: String) -> Int?  {
+        
+        return userDefaults.integer(forKey: key)
+    }
+    
+    static func getBool(key: String) -> Bool?  {
+        
+        return userDefaults.bool(forKey: key)
     }
     
     static func saveObject<T: Codable>(data: T, key: String)  {
