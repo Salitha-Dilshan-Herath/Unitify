@@ -968,6 +968,9 @@
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="29i-ue-1vZ">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="refreshBtnTap:" destination="Ibs-vC-l1Z" id="lca-Fz-3tY"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -2115,6 +2118,9 @@
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="195-Bg-m3u">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="refreshBtnTap:" destination="ZFl-MN-hWJ" id="pBz-eE-6KI"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -2566,6 +2572,9 @@
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="iLZ-UQ-Hex">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="refreshBtnTap:" destination="hqY-8N-YaX" id="eyi-MN-eWc"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
