@@ -117,7 +117,7 @@ class VolumeLiquidVC: BaseViewController {
     
     @IBAction func refreshBtnTap(_ sender: Any) {
            
-       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA)
        
        self.liquid = Liquid()
        
@@ -162,7 +162,7 @@ class VolumeLiquidVC: BaseViewController {
     
     override func saveBackgroundData() {
         
-        if self.liquid.gallon == 0  || !Constant.IS_AUTO_SAVE{
+        if (self.liquid.gallon == 0 && self.liquid.litre == 0)  || !Constant.IS_AUTO_SAVE{
             return
         }
         

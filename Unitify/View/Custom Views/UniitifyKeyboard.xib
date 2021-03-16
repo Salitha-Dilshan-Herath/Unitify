@@ -200,11 +200,11 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-EA-1ft">
                                             <rect key="frame" x="276.5" y="0.0" width="137.5" height="88.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qUH-Sv-sUX">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qUH-Sv-sUX">
                                                     <rect key="frame" x="0.0" y="0.0" width="137.5" height="88.5"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfJ-gu-xY5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="43.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="x">
@@ -215,7 +215,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="-3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edr-mn-gaF">
-                                                            <rect key="frame" x="0.0" y="44" width="137.5" height="44.5"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="137.5" height="44"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="NEG">

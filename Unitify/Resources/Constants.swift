@@ -46,6 +46,6 @@ struct Constant {
     static let ALERT_HEADER = "Unitify"
     static let HISTORY_DATA_SAVE_SUCCESS    =  "Calculation saved in history successfully."
     static let HISTORY_DATA_ALREADY_EXISTS  =  "This calculation is already saved. Please try another calculation."
-    static let HISTORY_DATA_ZERO_CANT_STORE =  "History can't save zero value. Try another calculation."
+    static let HISTORY_DATA_ZERO_CANT_STORE =  "History can't save zero values. Try another calculation."
 
 }

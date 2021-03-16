@@ -131,7 +131,7 @@ class LengthVC: BaseViewController {
     
     @IBAction func refreshBtnTap(_ sender: Any) {
         
-        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA)
         
         self.length = Length()
         

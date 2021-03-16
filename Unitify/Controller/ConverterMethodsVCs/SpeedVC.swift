@@ -100,7 +100,7 @@ class SpeedVC: BaseViewController {
     
     @IBAction func refreshBtnTap(_ sender: Any) {
            
-       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_SPEED_DATA)
        
        self.speed = Speed()
        
@@ -146,7 +146,7 @@ class SpeedVC: BaseViewController {
     
     override func saveBackgroundData() {
         
-        if self.speed.ms == 0  || !Constant.IS_AUTO_SAVE{
+        if (self.speed.ms == 0 && self.speed.kmh == 0)  || !Constant.IS_AUTO_SAVE{
             return
         }
         

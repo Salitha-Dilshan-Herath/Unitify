@@ -94,7 +94,7 @@ class TemperatureVC: BaseViewController {
     
     @IBAction func refreshBtnTap(_ sender: Any) {
          
-         UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+         UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA)
          
          self.temperature = Temperature()
          
