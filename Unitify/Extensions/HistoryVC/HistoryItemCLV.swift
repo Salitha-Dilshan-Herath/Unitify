@@ -26,14 +26,8 @@ extension HistoryMethodTC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let numberOfItemsPerRow:CGFloat = 3
-        let spacingBetweenCells:CGFloat = 8
-        
-        let totalSpacing = ((numberOfItemsPerRow - 1) * spacingBetweenCells) //Amount of total spacing in a row
-        
-        let width = (collectionView.bounds.width - totalSpacing)/numberOfItemsPerRow
-        
-        return CGSize(width: width, height: width)
+    
+        return CGSize(width: 127, height: 127)
         
     }
     

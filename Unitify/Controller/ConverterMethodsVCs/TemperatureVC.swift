@@ -108,7 +108,8 @@ class TemperatureVC: BaseViewController {
     
     ///setup ui
     private func setupUI() {
-        viwKeyboard.delegate = self
+        self.viwKeyboard.delegate = self
+
         self.backgroundNotification()
         self.loadSessionData()
     }
@@ -196,6 +197,8 @@ class TemperatureVC: BaseViewController {
         
         if !txt.contains(Constant.NEGATIVE_CHARACTER) {
             textField.text!.insert(contentsOf: Constant.NEGATIVE_CHARACTER, at: txt.startIndex)
+        } else {
+            textField.text!.removeFirst()
         }
         
     }

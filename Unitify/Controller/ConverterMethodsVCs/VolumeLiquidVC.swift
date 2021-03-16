@@ -133,7 +133,9 @@ class VolumeLiquidVC: BaseViewController {
     
     ///setup ui
     private func setupUI() {
-        viwKeyboard.delegate = self
+        self.viwKeyboard.delegate = self
+        self.viwKeyboard.hideNegativeButton()
+
         isKeyBoardShow = false
         self.backgroundNotification()
         self.loadSessionData()

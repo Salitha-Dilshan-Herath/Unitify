@@ -149,6 +149,8 @@ class LengthVC: BaseViewController {
     ///setup ui
     private func setupUI() {
         self.viwKeyboard.delegate = self
+        self.viwKeyboard.hideNegativeButton()
+
         self.isKeyBoardShow = false
         
         self.backgroundNotification()

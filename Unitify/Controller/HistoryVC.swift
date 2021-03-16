@@ -77,7 +77,7 @@ extension HistoryVC: HistoryMethodTCDelegate {
             
             let weight = data as! Weight
             
-            lblHistoryData.text = "\(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.ounce)) oz \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.gram)) g \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.pound)) lb \n\n \(Int(weight.stone)) st  \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.stoneP)) pound \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.kg)) kg"
+            lblHistoryData.text = "\(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.ounce)) oz \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.gram)) g \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.pound)) lb \n\n \(Int(weight.stone)) st  \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.stoneP)) lb \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", weight.kg)) kg"
             
         case .temperature:
             

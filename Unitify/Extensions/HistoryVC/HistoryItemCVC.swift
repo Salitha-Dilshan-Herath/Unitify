@@ -25,8 +25,8 @@ class HistoryItemCVC: UICollectionViewCell {
         case .weight:
             
             if let weight = data as? Weight {
-                lblValueSecond.text    = "\(Int(weight.gram))g"
-                lblValueOne.text = "\(Int(weight.kg))kg"
+                lblValueSecond.text    = "\(Int(weight.gram)) g"
+                lblValueOne.text = "\(Int(weight.kg)) kg"
             }
             
             break
@@ -43,8 +43,8 @@ class HistoryItemCVC: UICollectionViewCell {
         case .length:
             
             if let length = data as? Length {
-                lblValueOne.text    = "\(Int(length.centimeters))cm"
-                lblValueSecond.text = "\(Int(length.meter))m"
+                lblValueOne.text    = "\(Int(length.kilometer)) km"
+                lblValueSecond.text = "\(Int(length.mile)) mile"
             }
             
             break
@@ -52,8 +52,8 @@ class HistoryItemCVC: UICollectionViewCell {
         case .speed:
             
             if let speed = data as? Speed {
-                lblValueOne.text    = "\(Int(speed.kmh))kmh"
-                lblValueSecond.text = "\(Int(speed.ms))ms"
+                lblValueOne.text    = "\(Int(speed.kmh)) kmh"
+                lblValueSecond.text = "\(Int(speed.ms)) ms"
             }
             
             break
@@ -61,8 +61,8 @@ class HistoryItemCVC: UICollectionViewCell {
         case .volume:
             
             if let volume = data as? Volume {
-                lblValueOne.text    = "\(Int(volume.cubicDecimetre))dm³"
-                lblValueSecond.text = "\(Int(volume.cubicMetre))m³"
+                lblValueOne.text    = "\(Int(volume.cubicDecimetre)) dm³"
+                lblValueSecond.text = "\(Int(volume.cubicMetre)) m³"
             }
             
             break
@@ -71,8 +71,8 @@ class HistoryItemCVC: UICollectionViewCell {
             
             if let liquid = data as? Liquid {
                 
-                lblValueOne.text    = "\(Int(liquid.millilitre))mm"
-                lblValueSecond.text = "\(Int(liquid.litre))l"
+                lblValueOne.text    = "\(Int(liquid.millilitre)) mm"
+                lblValueSecond.text = "\(Int(liquid.litre)) l"
                 
             }
             

@@ -19,11 +19,11 @@ protocol UnitifyKeyboardViewDelegate {
 
 class UnitifyKeyboardView: UIView {
 
-    
     //MARK: - @IBOutlets
     @IBOutlet var keys: [UIButton]!
     @IBOutlet var viwContent: UIView!
     @IBOutlet weak var viwOptions: UIView!
+    @IBOutlet weak var btnNegative: UIButton!
     
     //MARK:- Variables
     var delegate: UnitifyKeyboardViewDelegate?
@@ -50,6 +50,11 @@ class UnitifyKeyboardView: UIView {
         viwContent.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viwContent.layer.cornerRadius = 15
         viwContent.clipsToBounds = true
+        
+    }
+    
+    func hideNegativeButton()  {
+        btnNegative.removeFromSuperview()
     }
     
     @IBAction func NumberBtnTap(_ sender: UIButton) {
