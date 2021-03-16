@@ -48,7 +48,7 @@ class UnitifyKeyboardView: UIView {
         addSubview(viwContent)
         viwContent.frame = self.bounds
         viwContent.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viwContent.layer.cornerRadius = 10
+        viwContent.layer.cornerRadius = 15
         viwContent.clipsToBounds = true
     }
     

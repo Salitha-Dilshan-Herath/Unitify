@@ -109,6 +109,11 @@ class LengthVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if (self.length.centimeters == 0 && self.length.kilometer == 0){
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
+        
         if let history_data = UserDefaultsManager.getObject(type: [Length].self, key: Constant.HISTORY_MANAGER_STORE_LENGTH_DATA){
          
             if history_data.contains(where: {$0  == self.length}) {
@@ -122,6 +127,21 @@ class LengthVC: BaseViewController {
         } else {
             self.saveHistoryData(data: self.length, type: [Length].self, key: Constant.HISTORY_MANAGER_STORE_LENGTH_DATA)
         }
+    }
+    
+    @IBAction func refreshBtnTap(_ sender: Any) {
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+        
+        self.length = Length()
+        
+        self.meterValue  = 0
+        self.kilometerValue  = 0
+        self.mileValue   = 0
+        self.centimetersValue  = 0
+        self.millimeterValue = 0
+        self.yardValue     = 0
+        self.inchValue     = 0
     }
     
     //MARK: - Custom Method
@@ -138,6 +158,10 @@ class LengthVC: BaseViewController {
     
     private func loadSessionData () {
         
+        if !Constant.IS_AUTO_SAVE{
+            return
+        }
+               
         guard let history_length = UserDefaultsManager.getObject(type: Length.self, key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA) else {
             return
         }
@@ -157,6 +181,12 @@ class LengthVC: BaseViewController {
     }
     
     override func saveBackgroundData() {
+        
+        if ((self.length.centimeters == 0 && self.length.kilometer == 0))  || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
+        
         UserDefaultsManager.saveObject(data: self.length, key: Constant.SESSION_MANAGER_STORE_LENGTH_DATA)
     }
     

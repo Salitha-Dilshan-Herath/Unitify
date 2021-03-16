@@ -73,6 +73,10 @@ class VolumeVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if (self.volume.cubicCentimetre == 0 && self.volume.cubicMetre == 0) {
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
         
         if let history_data = UserDefaultsManager.getObject(type: [Volume].self, key: Constant.HISTORY_MANAGER_STORE_VOLUME_DATA){
             
@@ -89,6 +93,18 @@ class VolumeVC: BaseViewController {
         }
     }
     
+    @IBAction func refreshBtnTap(_ sender: Any) {
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+        
+        self.volume = Volume()
+        
+        self.cubicMeterValue  = 0
+        self.cubicCentimeterValue  = 0
+        self.cubicDecimeterValue   = 0
+       
+    }
+    
     
     //MARK: - Custom Method
     
@@ -100,6 +116,10 @@ class VolumeVC: BaseViewController {
     }
     
     private func loadSessionData () {
+    
+        if !Constant.IS_AUTO_SAVE{
+            return
+        }
         
         guard let history_volume = UserDefaultsManager.getObject(type: Volume.self, key: Constant.SESSION_MANAGER_STORE_VOLUME_DATA) else {
             return
@@ -114,6 +134,12 @@ class VolumeVC: BaseViewController {
     }
     
     override func saveBackgroundData() {
+        
+        if ((self.volume.cubicCentimetre == 0 && self.volume.cubicMetre == 0))  || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
+        
         UserDefaultsManager.saveObject(data: self.volume, key: Constant.SESSION_MANAGER_STORE_VOLUME_DATA)
     }
     

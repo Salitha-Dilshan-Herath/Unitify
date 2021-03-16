@@ -78,6 +78,11 @@ class SpeedVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if self.speed.ms == 0 {
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
+                
         if let history_data = UserDefaultsManager.getObject(type: [Speed].self, key: Constant.HISTORY_MANAGER_STORE_SPEED_DATA){
          
             if history_data.contains(where: {$0  == self.speed}) {
@@ -93,6 +98,19 @@ class SpeedVC: BaseViewController {
         }
     }
     
+    @IBAction func refreshBtnTap(_ sender: Any) {
+           
+       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+       
+       self.speed = Speed()
+       
+       self.msValue  = 0
+       self.kmhValue  = 0
+       self.mhValue   = 0
+       self.knotValue  = 0
+
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
@@ -106,6 +124,10 @@ class SpeedVC: BaseViewController {
     }
     
     private func loadSessionData () {
+        
+        if !Constant.IS_AUTO_SAVE{
+                    return
+        }
         
         guard let history_speed = UserDefaultsManager.getObject(type: Speed.self, key: Constant.SESSION_MANAGER_STORE_SPEED_DATA) else {
             return
@@ -123,6 +145,11 @@ class SpeedVC: BaseViewController {
     }
     
     override func saveBackgroundData() {
+        
+        if self.speed.ms == 0  || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
         UserDefaultsManager.saveObject(data: self.speed, key: Constant.SESSION_MANAGER_STORE_SPEED_DATA)
     }
     

@@ -72,6 +72,10 @@ class TemperatureVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if self.temperature.celsius == 0 && self.temperature.fahrenheit == 0{
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
         
         if let history_data = UserDefaultsManager.getObject(type: [Temperature].self, key: Constant.HISTORY_MANAGER_STORE_TEMPERATURE_DATA){
          
@@ -88,6 +92,18 @@ class TemperatureVC: BaseViewController {
         }
     }
     
+    @IBAction func refreshBtnTap(_ sender: Any) {
+         
+         UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+         
+         self.temperature = Temperature()
+         
+         self.celsiusValue  = 0
+         self.fahrenheitValue  = 0
+         self.kelvinValue   = 0
+      
+     }
+    
     //MARK: - Custom Method
     
     ///setup ui
@@ -98,6 +114,10 @@ class TemperatureVC: BaseViewController {
     }
     
     private func loadSessionData () {
+        
+        if !Constant.IS_AUTO_SAVE{
+            return
+        }
         
         guard let history_temp = UserDefaultsManager.getObject(type: Temperature.self, key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA) else {
             return
@@ -112,6 +132,11 @@ class TemperatureVC: BaseViewController {
     }
     
     override func saveBackgroundData() {
+        
+        if (self.temperature.celsius == 0 && self.temperature.kelvin == 0 ) || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
         UserDefaultsManager.saveObject(data: self.temperature, key: Constant.SESSION_MANAGER_STORE_TEMPERATURE_DATA)
     }
     

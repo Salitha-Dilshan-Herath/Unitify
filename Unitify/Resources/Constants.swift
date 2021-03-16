@@ -10,6 +10,8 @@ import Foundation
 struct Constant {
     
     static let UNITS_METHODS_TABLE_IDENTIFY         = "method"
+    static let HISTORY_COLLECTION_VIEW_IDENTIFY     = "item"
+    
     static let WEIGHT_CONVERTER_SEGUE_IDENTIFY      = "weight"
     static let TEMPERATURE_CONVERTER_SEGUE_IDENTIFY = "temperature"
     static let VOLUME_CONVERTER_SEGUE_IDENTIFY      = "voulme"
@@ -44,5 +46,6 @@ struct Constant {
     static let ALERT_HEADER = "Unitify"
     static let HISTORY_DATA_SAVE_SUCCESS    =  "Calculation saved in history successfully."
     static let HISTORY_DATA_ALREADY_EXISTS  =  "This calculation is already saved. Please try another calculation."
+    static let HISTORY_DATA_ZERO_CANT_STORE =  "History can't save zero value. Try another calculation."
 
 }

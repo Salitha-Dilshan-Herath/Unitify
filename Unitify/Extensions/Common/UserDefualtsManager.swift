@@ -24,15 +24,27 @@ struct UserDefaultsManager {
     
     static func getString(key: String) -> String?  {
         
+        if  userDefaults.object(forKey: key) == nil {
+            return nil
+        }
+        
         return userDefaults.string(forKey: key)
     }
     
     static func getInt(key: String) -> Int?  {
         
+        if  userDefaults.object(forKey: key) == nil {
+            return nil
+        }
+        
         return userDefaults.integer(forKey: key)
     }
     
     static func getBool(key: String) -> Bool?  {
+        
+        if  userDefaults.object(forKey: key) == nil {
+            return nil
+        }
         
         return userDefaults.bool(forKey: key)
     }

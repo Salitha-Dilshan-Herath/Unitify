@@ -39,6 +39,8 @@
 		E5E243D425CE2F2D00B1FBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D225CE2F2D00B1FBF1 /* Main.storyboard */; };
 		E5E243D625CE2F3800B1FBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D525CE2F3800B1FBF1 /* Assets.xcassets */; };
 		E5E243D925CE2F3800B1FBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E243D725CE2F3800B1FBF1 /* LaunchScreen.storyboard */; };
+		E5E7522425FF8D3800425B8B /* HistoryItemCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7522325FF8D3800425B8B /* HistoryItemCVC.swift */; };
+		E5E7522725FF9A5800425B8B /* HistoryItemCLV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7522625FF9A5800425B8B /* HistoryItemCLV.swift */; };
 		E5F1CA8B25F0A3C600E45E54 /* Liquid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1CA8A25F0A3C600E45E54 /* Liquid.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		E5E243D525CE2F3800B1FBF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E243D825CE2F3800B1FBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E243DA25CE2F3800B1FBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E7522325FF8D3800425B8B /* HistoryItemCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCVC.swift; sourceTree = "<group>"; };
+		E5E7522625FF9A5800425B8B /* HistoryItemCLV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCLV.swift; sourceTree = "<group>"; };
 		E5F1CA8A25F0A3C600E45E54 /* Liquid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 			children = (
 				E503CA2925FE599F00C4C98F /* HisotryTBV.swift */,
 				E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */,
+				E5E7522325FF8D3800425B8B /* HistoryItemCVC.swift */,
+				E5E7522625FF9A5800425B8B /* HistoryItemCLV.swift */,
 			);
 			path = HistoryVC;
 			sourceTree = "<group>";
@@ -327,8 +333,10 @@
 				E5DE40EF25F3D31C00655F5F /* BaseViewController.swift in Sources */,
 				E503CA1925FD047400C4C98F /* Volume.swift in Sources */,
 				E5BCF09325CFCEED007284C0 /* CommonExtentions.swift in Sources */,
+				E5E7522425FF8D3800425B8B /* HistoryItemCVC.swift in Sources */,
 				E5E243CD25CE2F2D00B1FBF1 /* AppDelegate.swift in Sources */,
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
+				E5E7522725FF9A5800425B8B /* HistoryItemCLV.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
 				E503CA1C25FD171100C4C98F /* VolumeVC.swift in Sources */,
 				E5DE40F925F3F8BD00655F5F /* Length.swift in Sources */,

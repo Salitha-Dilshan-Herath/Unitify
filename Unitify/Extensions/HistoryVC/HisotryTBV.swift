@@ -25,6 +25,9 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblMethodName.text = data.rawValue
         cell.imgMethod.image    = UIImage(named: "\(data.rawValue)")
+        cell.selectedType       = data
+        cell.setupCell()
+        cell.delegate           = self
         cell.selectionStyle     = .none
         
         return cell
@@ -33,7 +36,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if selectedCell == indexPath.row {
-            return 300
+            return 250
         }
         
         return 95
@@ -55,7 +58,6 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        //tblMethods.reloadRows(at: [indexPath], with: .automatic)
         tableView.beginUpdates()
         tableView.endUpdates()
     }

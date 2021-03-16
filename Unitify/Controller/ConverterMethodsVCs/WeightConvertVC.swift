@@ -103,8 +103,13 @@ class WeightConvertVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if (self.weight.ounce == 0 && self.weight.kg == 0) {
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
+        
         if let history_data = UserDefaultsManager.getObject(type: [Weight].self, key: Constant.HISTORY_MANAGER_STORE_WEIGHT_DATA){
-         
+            
             if history_data.contains(where: {$0  == self.weight}) {
                 
                 Alert.showMessage(msg: Constant.HISTORY_DATA_ALREADY_EXISTS, on: self)
@@ -118,6 +123,19 @@ class WeightConvertVC: BaseViewController {
         }
     }
     
+    @IBAction func refreshBtnTap(_ sender: Any) {
+        
+        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+        
+        self.weight = Weight()
+        
+        self.ounceValue  = 0
+        self.poundValue  = 0
+        self.gramValue   = 0
+        self.stoneValue  = 0
+        self.stonePValue = 0
+        self.kgValue     = 0
+    }
     
     //MARK: - Custom Method
     
@@ -133,6 +151,10 @@ class WeightConvertVC: BaseViewController {
     
     private func loadSessionData () {
         
+        if !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
         guard let history_weight = UserDefaultsManager.getObject(type: Weight.self, key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA) else {
             return
         }
@@ -145,11 +167,14 @@ class WeightConvertVC: BaseViewController {
         self.stonePValue = history_weight.stoneP
         self.kgValue     = history_weight.kg
         
-        UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
-
     }
     
     override func saveBackgroundData() {
+      
+        if ((self.weight.ounce == 0 && self.weight.kg == 0))  || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
         UserDefaultsManager.saveObject(data: self.weight, key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
     }
     

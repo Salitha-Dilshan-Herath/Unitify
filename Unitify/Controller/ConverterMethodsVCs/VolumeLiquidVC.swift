@@ -95,6 +95,11 @@ class VolumeLiquidVC: BaseViewController {
     //MARK: - @IBActions
     @IBAction func saveBtnTap(_ sender: Any) {
         
+        if self.liquid.gallon == 0 {
+            Alert.showMessage(msg: Constant.HISTORY_DATA_ZERO_CANT_STORE, on: self)
+            return
+        }
+                
         if let history_data = UserDefaultsManager.getObject(type: [Liquid].self, key: Constant.HISTORY_MANAGER_STORE_LIQUID_DATA){
          
             if history_data.contains(where: {$0  == self.liquid}) {
@@ -110,6 +115,20 @@ class VolumeLiquidVC: BaseViewController {
         }
     }
     
+    @IBAction func refreshBtnTap(_ sender: Any) {
+           
+       UserDefaultsManager.removeObject(key: Constant.SESSION_MANAGER_STORE_WEIGHT_DATA)
+       
+       self.liquid = Liquid()
+       
+       self.gallonValue     = 0
+       self.litreValue      = 0
+       self.pintValue       = 0
+       self.fluidValue      = 0
+       self.millilitreValue = 0
+        
+    }
+    
     //MARK: - Custom Method
     
     ///setup ui
@@ -121,6 +140,10 @@ class VolumeLiquidVC: BaseViewController {
     }
     
     private func loadSessionData () {
+        
+        if !Constant.IS_AUTO_SAVE{
+            return
+        }
         
         guard let history_liquid = UserDefaultsManager.getObject(type: Liquid.self, key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA) else {
             return
@@ -138,6 +161,11 @@ class VolumeLiquidVC: BaseViewController {
     }
     
     override func saveBackgroundData() {
+        
+        if self.liquid.gallon == 0  || !Constant.IS_AUTO_SAVE{
+            return
+        }
+        
         UserDefaultsManager.saveObject(data: self.liquid, key: Constant.SESSION_MANAGER_STORE_LIQUID_DATA)
     }
     
