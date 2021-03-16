@@ -11,7 +11,6 @@ import UIKit
 
 struct UserDefaultsManager {
     
-    
     private static var userDefaults = UserDefaults.standard
     private static let encoder = JSONEncoder()
     private static let decoder = JSONDecoder()

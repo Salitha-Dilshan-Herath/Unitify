@@ -16,6 +16,7 @@
 		E503CA2625FE3ACF00C4C98F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2525FE3ACE00C4C98F /* HistoryVC.swift */; };
 		E503CA2A25FE599F00C4C98F /* HisotryTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2925FE599F00C4C98F /* HisotryTBV.swift */; };
 		E503CA2D25FE662900C4C98F /* HistoryMethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */; };
+		E5265BFD2601010B00825E87 /* TextFieldBoardViw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5265BFC2601010B00825E87 /* TextFieldBoardViw.swift */; };
 		E547D89B25CEF8D10082CFD2 /* ConvertMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */; };
 		E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */; };
 		E547D8A325CF05950082CFD2 /* MethodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547D8A225CF05950082CFD2 /* MethodTC.swift */; };
@@ -54,6 +55,7 @@
 		E503CA2525FE3ACE00C4C98F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		E503CA2925FE599F00C4C98F /* HisotryTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisotryTBV.swift; sourceTree = "<group>"; };
 		E503CA2C25FE662900C4C98F /* HistoryMethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMethodTC.swift; sourceTree = "<group>"; };
+		E5265BFC2601010B00825E87 /* TextFieldBoardViw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBoardViw.swift; sourceTree = "<group>"; };
 		E547D89A25CEF8D10082CFD2 /* ConvertMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsVC.swift; sourceTree = "<group>"; };
 		E547D89E25CF04100082CFD2 /* ConvertMethodsTBV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMethodsTBV.swift; sourceTree = "<group>"; };
 		E547D8A225CF05950082CFD2 /* MethodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTC.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				E5DE40EE25F3D31C00655F5F /* BaseViewController.swift */,
 				E503C9ED25F8930800C4C98F /* UserDefualtsManager.swift */,
 				E503CA0725FB072D00C4C98F /* Alert.swift */,
+				E5265BFC2601010B00825E87 /* TextFieldBoardViw.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				E5E243CF25CE2F2D00B1FBF1 /* SceneDelegate.swift in Sources */,
 				E5E7522725FF9A5800425B8B /* HistoryItemCLV.swift in Sources */,
 				E547D89F25CF04100082CFD2 /* ConvertMethodsTBV.swift in Sources */,
+				E5265BFD2601010B00825E87 /* TextFieldBoardViw.swift in Sources */,
 				E503CA1C25FD171100C4C98F /* VolumeVC.swift in Sources */,
 				E5DE40F925F3F8BD00655F5F /* Length.swift in Sources */,
 				E503C9EE25F8930800C4C98F /* UserDefualtsManager.swift in Sources */,
