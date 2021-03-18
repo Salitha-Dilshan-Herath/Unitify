@@ -111,7 +111,7 @@ extension HistoryVC: HistoryMethodTCDelegate {
             
             let liquid = data as! Liquid
             
-            lblHistoryData.text = "\(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.millilitre)) ml \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.litre)) l \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.gallon)) gal \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.fluid)) fluid \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.pint)) pint"
+            lblHistoryData.text = "\(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.millilitre)) ml \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.litre)) l \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.gallon)) gal \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.fluid)) fl oz \n\n \(String(format:"%.\(Constant.NUMBER_OF_DECIMAL_PLACES)f", liquid.pint)) pt"
             break
         }
         
